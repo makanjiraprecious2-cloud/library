@@ -3292,6 +3292,12 @@ html[data-theme="light"] #adminPanel .admin-menu {
 }
 </style>
 
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#176b4d">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MZUGOSS Library">
 </head>
 
 
@@ -3565,14 +3571,10 @@ LIBRARIAN SYSTEM
 
 
   <button onclick="showPage('messages')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5.5 4v-4.5A2.5 2.5 0 0 1 4 13.5v-8Z"/><path d="M8 8h8M8 12h5"/></svg><span class="nav-button-label">Messages</span><span id="messageBadge"></span></button>
-  <button
-   id="adminReturnButton"
-   style="display:none"
-   onclick="openAdminFromLibrarian()"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.7-2.9 8.1-7 10-4.1-1.9-7-5.3-7-10V6l7-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><span class="nav-button-label">Admin Panel</span></button>
 
 
 
-  <button onclick="backToDashboards()"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="nav-button-label">Dashboards</span></button>
+  
 
 
 
@@ -4802,22 +4804,22 @@ ADMIN PANEL
 
 
 
-   <button class="admin-tab" data-section="adminDashboard" onclick="showAdminSection('adminDashboard')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="nav-button-label">Dashboard</span></button>
+   <button class="admin-tab admin-back-home" onclick="backToDashboards()"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6M9 12h12"/></svg><span class="nav-button-label">Back</span></button>
 
 
 
-   <button class="admin-tab" data-section="registerStudent" onclick="showAdminSection('registerStudent')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg><span class="nav-button-label">Register Student</span></button>
+   <button class="admin-tab" data-section="studentRegistrationChoices" onclick="showAdminSection('studentRegistrationChoices')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg><span class="nav-button-label">Register Students</span></button>
 
 
 
-   <button class="admin-tab" data-section="bulkStudents" onclick="showAdminSection('bulkStudents')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span class="nav-button-label">Register Students by File</span></button>
+   
 
 
 
-   <button class="admin-tab" data-section="bulkBooks" onclick="showAdminSection('bulkBooks')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span class="nav-button-label">Register Books by File</span></button>
+   
 
 
-   <button class="admin-tab" data-section="adminAddBook" onclick="showAdminSection('adminAddBook')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 5.5V22"/><path d="M8 7h8M8 11h8M8 15h6"/></svg><span class="nav-button-label">Register One Book</span></button>
+   <button class="admin-tab" data-section="bookRegistrationChoices" onclick="showAdminSection('bookRegistrationChoices')"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 5.5V22"/><path d="M8 7h8M8 11h8M8 15h6"/></svg><span class="nav-button-label">Add Book</span></button>
 
 
 
@@ -4843,7 +4845,7 @@ ADMIN PANEL
 
 
 
-   <button onclick="backToDashboards()"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="nav-button-label">Dashboards</span></button>
+   
 
 
 
@@ -4984,27 +4986,17 @@ ADD BOOK
 
 
 
-  <label>Category / Subject</label>
+  <label>Publisher</label>
 
 
 
-  <select id="bookCategory" onchange="applyAutomaticShelfToForm()">
-
-
-
-  
-   <option>ACHIEVERS</option>
-   <option>EXCEL AND SUCCEED</option>
-
-   <option>TARGET</option>
-
-   <option>ARISE WITH</option>
-
-   <option>CHANCO</option>
-
-   <option>JHANGO</option>
-
-   <option>Other</option>
+  <input id="bookCategory" list="bookPublisherOptions" placeholder="Scan barcode or enter publisher (e.g. EXCELL, SUCCEED, JHANGO)" autocomplete="off" oninput="applyAutomaticShelfToForm()" onchange="applyAutomaticShelfToForm()">
+  <datalist id="bookPublisherOptions">
+   <option value="EXCELL"></option><option value="SUCCEED"></option><option value="EXCELL AND SUCCEED"></option>
+   <option value="ACHIEVER"></option><option value="ACHIEVERS"></option><option value="ARCHIEVER"></option><option value="ARCHIVER"></option>
+   <option value="JHANGO"></option><option value="CHANCO"></option><option value="TARGET"></option><option value="ARISE WITH"></option>
+   <option value="OTHER"></option>
+  </datalist>
 
   <label>Book Class / Form</label>
   <select id="bookClass" onchange="applyAutomaticShelfToForm()">
@@ -5014,13 +5006,6 @@ ADD BOOK
    <option>Form 3</option>
    <option>Form 4</option>
   </select>
-
-  <label>Book Number (from first page)</label>
-  <div class="input-group">
-   <input id="bookNumber" placeholder="Scan/capture the number printed on the first page" autocomplete="off">
-   <button type="button" class="scan-btn" onclick="openBookNumberCapture()">Capture</button>
-  </div>
-  <div id="bookNumberCaptureResult"></div>
 
   <div class="shelf-auto-note">
    <strong>Automatic shelf arrangement:</strong> the system places the book in the correct department shelf (Technical, Science, Language or Humanities). Within each department, Form 4 is the top level, followed by Form 3, Form 2 and Form 1 at the bottom. Books at the same level are arranged alphabetically.
@@ -5035,7 +5020,7 @@ ADD BOOK
   <label>Form Level</label>
   <input id="bookShelfRow" readonly placeholder="e.g. Form 4 • Level 1">
 
-  <label>Position Within Level</label>
+  <label>Shelf Column / Alphabetical Position</label>
   <input id="bookShelfPosition" readonly placeholder="Automatic position">
 
   <label>Quantity</label>
@@ -5202,10 +5187,10 @@ ADD BOOK
      id="newStudentLibraryId"
      value=""
      readonly
-     placeholder="MZG/0001">
+     placeholder="MGZ/0001">
 
     <div class="scanner-help">
-     Student numbers are generated automatically in the format <strong>MZG/0001</strong>, <strong>MZG/0002</strong>, and so on.
+     Student numbers are generated automatically in the format <strong>MGZ/0001</strong>, <strong>MGZ/0002</strong>, and so on.
     </div>
 
 
@@ -5374,7 +5359,7 @@ ADD BOOK
 
      <br><br>
 
-     Student numbers are created automatically as <strong>MZG/0001</strong>, <strong>MZG/0002</strong>, etc. An old Number column may be present, but the system will generate a new number automatically.
+     Student numbers are created automatically as <strong>MGZ/0001</strong>, <strong>MGZ/0002</strong>, etc. An old Number column may be present, but the system will generate a new number automatically.
 
      <br><br>
 
@@ -5734,7 +5719,7 @@ ADD BOOK
 
       onclick="archiveAllForm4Students()">
 
-       Archive ALL Form 4 to ALUMNI
+       Archive All Form 4 to Alumni
 
      </button>
 
@@ -5754,11 +5739,7 @@ ADD BOOK
 
 
 
-     When all selected Form 4 students are deleted,
-
-     the remaining classes can be promoted using the
-
-     promotion button below.
+     After all Form 4 students have been archived to Alumni, the remaining active classes are promoted automatically.
 
 
 
@@ -13890,13 +13871,19 @@ AUTOMATIC STUDENT NUMBERING
 ========================================================= */
 
 function getNextStudentNumber(){
- const numbers = students.map(s => {
-  const value=String(s.libraryId || "");
-  const match=value.match(/^MZG\/(\d+)$/i) || value.match(/^MZG[-_ ]?(\d+)$/i);
+ // Keep IDs unique across active, dropped, and alumni records. New IDs use MGZ/0001.
+ const allRecords = [
+  ...(Array.isArray(students) ? students : []),
+  ...(Array.isArray(droppedStudents) ? droppedStudents : []),
+  ...(Array.isArray(alumniStudents) ? alumniStudents : [])
+ ];
+ const numbers = allRecords.map(s => {
+  const value=String(s.libraryId || "").trim();
+  const match=value.match(/^(?:MGZ|MZG)\/(\d+)$/i) || value.match(/^(?:MGZ|MZG)[-_ ]?(\d+)$/i);
   return match ? parseInt(match[1],10) : 0;
  });
  const next = Math.max(0,...numbers) + 1;
- return `MZG/${String(next).padStart(4,"0")}`;
+ return `MGZ/${String(next).padStart(4,"0")}`;
 }
 
 function refreshNextStudentNumber(){
@@ -16351,13 +16338,7 @@ function handleScannedBarcode(barcode){
 
   lookupBookByBarcode("add");
 
-  // After a new barcode is scanned, move directly to first-page book-number capture.
-  setTimeout(() => {
-   const bn = document.getElementById("bookNumber");
-   const barcodeInput = document.getElementById("bookBarcode");
-   const existing = findBookByBarcode(barcodeInput ? barcodeInput.value : "");
-   if(bn && !bn.value && !existing) openBookNumberCapture();
-  },350);
+  // Printed book numbers are captured only during borrowing and returning.
 
 
 
@@ -16726,14 +16707,7 @@ try{ refreshAllBookShelves(); saveData(); }catch(e){ console.warn("Shelf migrati
       btn.prepend(span);
     });
   }
-  function addThemeToggle(){
-    document.querySelectorAll('nav').forEach(nav=>{
-      if(nav.querySelector('.ui-theme-toggle'))return;
-      const b=document.createElement('button'); b.className='ui-theme-toggle'; b.type='button'; b.title='Toggle light / dark mode'; b.setAttribute('aria-label','Toggle light and dark mode'); b.innerHTML=icon('theme');
-      b.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light';localStorage.setItem('mz_theme',document.documentElement.dataset.theme)};
-      nav.querySelector(':scope > div:last-child')?.appendChild(b);
-    });
-  }
+  function addThemeToggle(){ /* Light-only interface: theme toggle intentionally disabled. */ }
   function addBacks(){
     const backAction=()=>{ if(typeof backToDashboards==='function') backToDashboards(); else if(typeof logout==='function') logout(); };
     document.querySelectorAll('.admin-header,.student-panel-header').forEach(h=>{
@@ -16746,15 +16720,1380 @@ try{ refreshAllBookShelves(); saveData(); }catch(e){ console.warn("Shelf migrati
       const b=document.createElement('button'); b.className='ui-back-button'; b.type='button'; b.innerHTML=icon('back')+'<span>Back</span>'; b.onclick=backAction; nav.querySelector(':scope > div:last-child')?.appendChild(b);
     });
   }
-  function restoreTheme(){
-    const saved=localStorage.getItem('mz_theme'); document.documentElement.dataset.theme=saved||'dark';
-  }
+  function restoreTheme(){ document.documentElement.dataset.theme="light"; try{localStorage.setItem("mz_theme","light")}catch(e){} }
   function enhance(){restoreTheme();decorateNav();addThemeToggle();addBacks();}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
   new MutationObserver(()=>{decorateNav();addThemeToggle();}).observe(document.body,{childList:true,subtree:true});
 })();
 </script>
 
-</body>
 
+<style>
+/* Administrator navigation is a persistent left rail; the content occupies the remaining space. */
+#adminPanel .admin-content{display:grid;grid-template-columns:235px minmax(0,1fr);gap:24px;align-items:start;width:96%;max-width:1500px;margin:22px auto 55px!important}
+#adminPanel .admin-menu{grid-column:1;grid-row:1;position:sticky!important;top:14px!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:7px!important;max-height:calc(100vh - 28px);overflow-y:auto!important;overflow-x:hidden!important;padding:12px!important;border-radius:18px!important}
+#adminPanel .admin-menu button{width:100%;justify-content:flex-start!important;text-align:left!important;white-space:normal!important}
+#adminPanel .admin-menu button:before{display:none!important}
+#adminPanel .admin-content>.admin-section,#adminPanel .admin-content>section{grid-column:2;grid-row:1;min-width:0}
+#adminPanel .admin-content>.admin-section:not(.active){display:none!important}
+#adminPanel .admin-content>.admin-section.active{display:block!important;animation:sectionIn .25s ease both}
+#adminPanel .admin-menu .admin-tab.active{background:linear-gradient(135deg,#3157d5,#5577ef)!important;color:white!important}
+.admin-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:20px 0}
+/* Once a section is opened, hide the tab rail until the user presses its Back button. */
+#adminPanel .admin-content.admin-section-mode{display:block!important;max-width:1200px}
+#adminPanel .admin-content.admin-section-mode>.admin-menu{display:none!important}
+#adminPanel .admin-content.admin-section-mode>.admin-section{width:100%;max-width:100%;grid-column:auto;grid-row:auto}
+.admin-choice-card{background:#fff;border:1px solid #dfe6f2;border-radius:18px;padding:25px;box-shadow:0 10px 28px rgba(19,35,73,.08)}
+.admin-choice-card h3{margin-top:0}.admin-choice-card p{color:#53627a;line-height:1.6}
+.admin-choice-card button,.admin-section-back{border:0;border-radius:10px;padding:11px 16px;background:#3157d5;color:#fff;font-weight:800}
+.admin-section-back{margin:0 0 18px;background:#5b6880}
+@media(max-width:900px){#adminPanel .admin-content{display:flex;flex-direction:column}#adminPanel .admin-menu{position:sticky!important;top:0!important;width:100%;max-height:none;flex-direction:row!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important}#adminPanel .admin-menu button{width:auto;flex:0 0 auto;white-space:nowrap!important}#adminPanel .admin-content>.admin-section,#adminPanel .admin-content>section{width:100%}.admin-choice-grid{grid-template-columns:1fr}}
+</style>
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ function ensureChoiceSection(id,title,desc,choices){
+   if($(id)) return;
+   const s=document.createElement('section');s.id=id;s.className='admin-section';
+   s.innerHTML='<button type="button" class="admin-section-back" onclick="returnAdminTabs()">← Back to Admin Tabs</button><h2>'+title+'</h2><p>'+desc+'</p><div class="admin-choice-grid">'+choices.map(c=>'<article class="admin-choice-card"><h3>'+c.title+'</h3><p>'+c.desc+'</p><button type="button" onclick="showAdminSection(\''+c.section+'\')">'+c.button+'</button></article>').join('')+'</div>';
+   const menu=$('#adminPanel .admin-menu'); if(menu&&menu.parentElement) menu.parentElement.appendChild(s);
+ }
+ function addSectionBackButtons(){
+   document.querySelectorAll('#adminPanel .admin-section').forEach(s=>{
+     if(s.id==='adminDashboard'||s.id==='studentRegistrationChoices'||s.id==='bookRegistrationChoices'||s.querySelector('.admin-section-back'))return;
+     const b=document.createElement('button');b.type='button';b.className='admin-section-back';b.textContent='← Back to Admin Tabs';b.onclick=()=>returnAdminTabs();s.insertBefore(b,s.firstChild);
+   });
+ }
+ function setMenuActive(id){document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(b=>{const active=b.dataset.section===id;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
+ window.returnAdminTabs=function(){
+   const content=document.querySelector('#adminPanel .admin-content');
+   if(content)content.classList.remove('admin-section-mode');
+   document.querySelectorAll('#adminPanel .admin-section').forEach(s=>s.classList.remove('active'));
+   document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current')});
+   const menu=document.querySelector('#adminPanel .admin-menu');if(menu)menu.style.removeProperty('display');
+   document.querySelector('#adminPanel .admin-content')?.scrollIntoView({behavior:'smooth',block:'start'});
+ };
+ window.showAdminSection=function(sectionId){
+   const content=document.querySelector('#adminPanel .admin-content');if(content)content.classList.add('admin-section-mode');
+   document.querySelectorAll('#adminPanel .admin-section').forEach(s=>s.classList.remove('active'));
+   const target=$(sectionId);if(target)target.classList.add('active');
+   setMenuActive(sectionId);
+   if(sectionId==='adminDashboard'){if(typeof updateAdminDashboard==='function')updateAdminDashboard()}
+   if(sectionId==='adminBookManagement'){const box=document.getElementById('adminBookManagement');if(box){box.querySelectorAll('.admin-book-list').forEach(n=>n.remove());const list=document.createElement('div');list.className='admin-book-list books';list.innerHTML=(books||[]).map(b=>'<article class="book book-card"><h3>'+String(b.title||b.name||'Untitled book').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))+'</h3><p><strong>Author:</strong> '+String(b.author||'Not recorded')+'</p><p><strong>Book ID:</strong> '+String(b.id)+'</p><p><strong>Available:</strong> '+String(b.available??b.quantity??0)+'</p><button class="delete-book-btn" onclick="deleteBook('+Number(b.id)+')">Delete Book</button></article>').join('')||'<p>No books have been registered yet.</p>';box.appendChild(list)}}
+   if(sectionId==='adminAddBook'&&typeof resetBookForm==='function')resetBookForm();
+   if(sectionId==='registerStudent'&&typeof refreshNextStudentNumber==='function')refreshNextStudentNumber();
+   if(sectionId==='studentRecords'&&typeof displayAdminClasses==='function')displayAdminClasses();
+   if(sectionId==='droppedStudents'&&typeof displayDroppedStudents==='function')displayDroppedStudents();
+   if(sectionId==='alumniStudents'&&typeof showAlumniYears==='function')showAlumniYears();
+   if(sectionId==='bulkStudents'&&$('studentImportResult'))$('studentImportResult').innerHTML='';
+   if(sectionId==='bulkBooks'&&$('bookImportResult'))$('bookImportResult').innerHTML='';
+   document.querySelector('#adminPanel .admin-content')?.scrollIntoView({behavior:'smooth',block:'start'});
+ };
+ // Use the established app functions, but make moving a student atomic and persist each archive.
+ window.archiveStudentsToAlumni=function(items,goneYear){
+   (items||[]).forEach(st=>{
+     const old=alumniStudents.find(a=>a.libraryId===st.libraryId);
+     if(!old)alumniStudents.unshift({...st,status:'Alumni',goneYear:Number(goneYear),archivedAt:new Date().toISOString()});
+   });
+ };
+ window.dropActiveStudent=function(id){
+   const st=students.find(s=>Number(s.id)===Number(id));if(!st)return;
+   const yr=prompt('Enter the year '+st.name+' dropped / left school:',String(new Date().getFullYear()));if(!yr||!/^\d{4}$/.test(yr))return;
+   if(!confirm('Move '+st.name+' to Dropped Students? They will be removed from this class and cannot borrow books.'))return;
+   if(!droppedStudents.some(d=>d.libraryId===st.libraryId))droppedStudents.unshift({...st,status:'Dropped',goneYear:Number(yr),droppedAt:new Date().toISOString()});
+   students=students.filter(s=>Number(s.id)!==Number(id));
+   if(typeof requests!=='undefined')requests=requests.filter(r=>r.studentId!==st.id&&r.libraryId!==st.libraryId);
+   saveData();updateStudentSuggestions();displayAdminClasses();if(typeof renderAdminStudents==='function')renderAdminStudents(st.form);displayDroppedStudents();showAlumniYears();updateAdminDashboard();showToast(st.name+' moved to Dropped Students','var(--red)');
+ };
+ window.deleteStudent=function(id){
+   const st=students.find(s=>Number(s.id)===Number(id));if(!st)return;
+   if(st.form==='Form 4'){
+     if(!confirm('Archive '+st.name+' as Alumni and remove them from active students?'))return;
+     const yr=prompt('Enter the year '+st.name+' left / completed school:',String(new Date().getFullYear()));if(!yr||!/^\d{4}$/.test(yr))return;
+     archiveStudentsToAlumni([st],yr);
+   }else{
+     if(!confirm('Move '+st.name+' to Dropped Students?'))return;
+     const yr=prompt('Enter the year '+st.name+' dropped / left school:',String(new Date().getFullYear()));if(!yr||!/^\d{4}$/.test(yr))return;
+     if(!droppedStudents.some(d=>d.libraryId===st.libraryId))droppedStudents.unshift({...st,status:'Dropped',goneYear:Number(yr),droppedAt:new Date().toISOString()});
+   }
+   students=students.filter(s=>Number(s.id)!==Number(id));saveData();updateStudentSuggestions();displayAdminClasses();if(typeof renderAdminStudents==='function')renderAdminStudents(st.form);displayDroppedStudents();showAlumniYears();updateAdminDashboard();showToast(st.form==='Form 4'?'Student moved to Alumni':'Student moved to Dropped Students',st.form==='Form 4'?'var(--purple)':'var(--red)');
+ };
+ window.deleteSelectedStudents=function(){
+   const checked=[...document.querySelectorAll('#adminStudentsInClass .student-select:checked')];const ids=checked.map(x=>Number(x.dataset.studentId));if(!ids.length){alert('Please select at least one student.');return;}
+   const chosen=students.filter(s=>ids.includes(Number(s.id)));const className=$('adminSelectedClass')?.textContent.replace(' Students','')||'';
+   if(className==='Form 4'){
+     if(!confirm('Archive the selected Form 4 students as Alumni?'))return;const yr=prompt('Enter the year these students left / completed school:',String(new Date().getFullYear()));if(!yr||!/^\d{4}$/.test(yr))return;archiveStudentsToAlumni(chosen,yr);
+   }else{
+     if(!confirm('Move the selected students to Dropped Students?'))return;const yr=prompt('Enter the year these students dropped / left school:',String(new Date().getFullYear()));if(!yr||!/^\d{4}$/.test(yr))return;chosen.forEach(st=>{if(!droppedStudents.some(d=>d.libraryId===st.libraryId))droppedStudents.unshift({...st,status:'Dropped',goneYear:Number(yr),droppedAt:new Date().toISOString()})});
+   }
+   students=students.filter(s=>!ids.includes(Number(s.id)));saveData();updateStudentSuggestions();displayAdminClasses();if(typeof renderAdminStudents==='function')renderAdminStudents(className);displayDroppedStudents();showAlumniYears();updateAdminDashboard();showToast('Student records updated',className==='Form 4'?'var(--purple)':'var(--red)');
+ };
+ // Shared catalog cards may be rendered in several roles. Only the Administrator can delete books.
+ const originalDeleteBook=window.deleteBook;
+ window.deleteBook=function(id){
+   const adminVisible=$('#adminPanel')&&getComputedStyle($('#adminPanel')).display!=='none'&&activeRole==='admin';
+   if(!adminVisible){alert('Books can only be deleted from the Administrator panel.');return;}
+   if(typeof originalDeleteBook==='function')return originalDeleteBook(id);
+ };
+ function enforceDeleteButtons(){
+   document.querySelectorAll('.delete-book-btn').forEach(btn=>{
+     if(btn.textContent.trim().toLowerCase()==='delete' || btn.getAttribute('onclick')?.includes('deleteBook(')){
+       const admin=$('#adminPanel')&&$('#adminPanel').contains(btn);
+       btn.style.display=admin?'':'none';
+     }
+   });
+ }
+ // A student who is dropped or archived must not be able to sign in or submit a borrowing request.
+ const originalSendBorrowRequest=window.sendBorrowRequest;
+ window.sendBorrowRequest=function(){const st=loggedInStudent;if(st&&([...(droppedStudents||[]),...(alumniStudents||[])].some(x=>x.libraryId===st.libraryId)||!(students||[]).some(x=>x.libraryId===st.libraryId))){alert('Dropped students and alumni cannot borrow books.');return;}if(typeof originalSendBorrowRequest==='function')return originalSendBorrowRequest();};
+ const originalBorrowBook=window.borrowBook;
+ window.borrowBook=function(id){const st=loggedInStudent;if(st&&([...(droppedStudents||[]),...(alumniStudents||[])].some(x=>x.libraryId===st.libraryId)||!(students||[]).some(x=>x.libraryId===st.libraryId))){alert('Dropped students and alumni cannot borrow books.');return;}if(typeof originalBorrowBook==='function')return originalBorrowBook(id);};
+ const originalStudentLogin=window.studentLogin;
+ window.studentLogin=function(){
+   const nm=$('studentLoginName')?.value.trim().toLowerCase()||'', lid=$('studentLoginId')?.value.trim().toLowerCase()||'';
+   const barred=[...(droppedStudents||[]),...(alumniStudents||[])].some(s=>(s.name||'').toLowerCase()===nm&&(s.libraryId||'').toLowerCase()===lid);
+   if(barred){if($('studentLoginError'))$('studentLoginError').textContent='This account is no longer active. Dropped students and alumni cannot borrow books.';return;}
+   if(typeof originalStudentLogin==='function')return originalStudentLogin();
+ };
+ function init(){
+   ensureChoiceSection('adminBookManagement','Manage Books','Review the library catalogue and remove a book only from the Administrator panel.',[]);
+   const bookTab=document.createElement('button');bookTab.type='button';bookTab.className='admin-tab';bookTab.dataset.section='adminBookManagement';bookTab.innerHTML='<svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 5.5V22M8 7h8M8 11h8"/></svg><span class="nav-button-label">Manage Books</span>';bookTab.onclick=()=>showAdminSection('adminBookManagement');const menu=$('#adminPanel .admin-menu');const first=menu?.querySelector('button');if(menu&&first)menu.insertBefore(bookTab,first.nextSibling);
+   ensureChoiceSection('studentRegistrationChoices','Register Students','Choose how you want to add students to the library system.',[
+     {title:'Register One Student',desc:'Enter one student’s details and create their account.',section:'registerStudent',button:'Register One Student'},
+     {title:'Import Students from File',desc:'Upload a prepared file to register multiple students together.',section:'bulkStudents',button:'Import Student File'}
+   ]);
+   ensureChoiceSection('bookRegistrationChoices','Add Book','Choose whether to register a single book or import a file.',[
+     {title:'Register One Book',desc:'Enter book name, author, category, form, quantity and barcode. Printed book numbers are captured only during borrowing and returning.',section:'adminAddBook',button:'Register One Book'},
+     {title:'Import Books from File',desc:'Upload a prepared book list to add multiple books.',section:'bulkBooks',button:'Import Book File'}
+   ]);
+   // Back buttons on content screens return to the admin tabs, while the left-rail Back goes to the first page.
+   addSectionBackButtons();
+   const mo=new MutationObserver(enforceDeleteButtons);mo.observe(document.body,{subtree:true,childList:true});enforceDeleteButtons();
+   // Make existing book and student registration sections reachable only through the combined chooser.
+   document.querySelectorAll('#adminPanel .admin-menu button[data-section="registerStudent"],#adminPanel .admin-menu button[data-section="bulkStudents"],#adminPanel .admin-menu button[data-section="bulkBooks"],#adminPanel .admin-menu button[data-section="adminAddBook"]').forEach(b=>b.style.display='none');
+   if(typeof displayDroppedStudents==='function')displayDroppedStudents();if(typeof showAlumniYears==='function')showAlumniYears();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+
+<script>
+/* Final administrator flow fix: section Back -> admin tabs; menu Back -> dashboard home. */
+(function(){
+  const $ = id => document.getElementById(id);
+  const content = () => document.querySelector('#adminPanel .admin-content');
+
+  window.returnAdminTabs = function(){
+    const wrap = content();
+    if(wrap) wrap.classList.remove('admin-section-mode');
+    document.querySelectorAll('#adminPanel .admin-section').forEach(section=>section.classList.remove('active'));
+    document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(button=>{
+      button.classList.remove('active');
+      button.removeAttribute('aria-current');
+    });
+    const menu = document.querySelector('#adminPanel .admin-menu');
+    if(menu) menu.style.removeProperty('display');
+    if(wrap) wrap.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  // Always open exactly one section, with the tab rail hidden until its Back button is used.
+  window.showAdminSection = function(sectionId){
+    const wrap = content();
+    if(wrap) wrap.classList.add('admin-section-mode');
+    document.querySelectorAll('#adminPanel .admin-section').forEach(section=>section.classList.remove('active'));
+    const target = $(sectionId);
+    if(target) target.classList.add('active');
+    document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(button=>{
+      const active = button.dataset.section === sectionId;
+      button.classList.toggle('active',active);
+      if(active) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
+    });
+    if(sectionId==='adminDashboard' && typeof updateAdminDashboard==='function') updateAdminDashboard();
+    if(sectionId==='adminBookManagement'){
+      const box=$('adminBookManagement');
+      if(box){
+        box.querySelectorAll('.admin-book-list').forEach(n=>n.remove());
+        const list=document.createElement('div'); list.className='admin-book-list books';
+        const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        list.innerHTML=(Array.isArray(books)?books:[]).map(b=>'<article class="book book-card"><h3>'+esc(b.title||b.name||'Untitled book')+'</h3><p><strong>Author:</strong> '+esc(b.author||'Not recorded')+'</p><p><strong>Book ID:</strong> '+esc(b.id)+'</p><p><strong>Available:</strong> '+esc(b.available??b.quantity??0)+'</p><button type="button" class="delete-book-btn" onclick="deleteBook('+Number(b.id)+')">Delete Book</button></article>').join('')||'<p>No books have been registered yet.</p>';
+        box.appendChild(list);
+      }
+    }
+    if(sectionId==='registerStudent' && typeof refreshNextStudentNumber==='function') refreshNextStudentNumber();
+    if(sectionId==='studentRecords' && typeof displayAdminClasses==='function') displayAdminClasses();
+    if(sectionId==='droppedStudents' && typeof displayDroppedStudents==='function') displayDroppedStudents();
+    if(sectionId==='alumniStudents' && typeof showAlumniYears==='function') showAlumniYears();
+    if(sectionId==='adminAddBook' && typeof resetBookForm==='function') resetBookForm();
+    if(sectionId==='bulkStudents' && $('studentImportResult')) $('studentImportResult').innerHTML='';
+    if(sectionId==='bulkBooks' && $('bookImportResult')) $('bookImportResult').innerHTML='';
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  // Every actual form/content page gets a Back button. The two chooser screens already have one.
+  function ensureBackButtons(){
+    document.querySelectorAll('#adminPanel .admin-section').forEach(section=>{
+      if(section.id==='adminDashboard' || section.querySelector('.admin-section-back')) return;
+      const back=document.createElement('button');
+      back.type='button'; back.className='admin-section-back';
+      back.textContent='← Back to Admin Tabs';
+      back.addEventListener('click',window.returnAdminTabs);
+      section.insertBefore(back,section.firstChild);
+    });
+  }
+  function ensureChoiceCards(){
+    const studentChoices=$('studentRegistrationChoices');
+    if(studentChoices){
+      const heading=studentChoices.querySelector('h2'); if(heading) heading.textContent='Register Students';
+      const desc=studentChoices.querySelector('p'); if(desc) desc.textContent='Choose one of the two options below.';
+    }
+    const bookChoices=$('bookRegistrationChoices');
+    if(bookChoices){
+      const heading=bookChoices.querySelector('h2'); if(heading) heading.textContent='Add Book';
+      const desc=bookChoices.querySelector('p'); if(desc) desc.textContent='Choose whether to register one book manually or import a book file.';
+    }
+  }
+  function init(){
+    ensureBackButtons(); ensureChoiceCards();
+    const id=$('newStudentLibraryId');
+    if(id){id.readOnly=true;id.placeholder='MGZ/0001';}
+    const form=$('registerStudent');
+    if(form){
+      const label=[...form.querySelectorAll('label')].find(el=>/student number/i.test(el.textContent));
+      if(label) label.textContent='Library ID Number (Generated Automatically)';
+      const help=form.querySelector('.scanner-help');
+      if(help) help.innerHTML='The system assigns a unique Library ID automatically, starting with <strong>MGZ/0001</strong>, then <strong>MGZ/0002</strong>, and so on.';
+      const submit=form.querySelector('button[onclick*="registerStudent"]');
+      if(submit) submit.textContent='Add Student';
+    }
+    const bulk=$('bulkStudents');
+    if(bulk){
+      const p=bulk.querySelector('.admin-form > p');
+      if(p) p.innerHTML='Import a <strong>CSV or TXT file</strong> with the student name and class. Use the column headings <strong>Name,Class</strong> (or <strong>Name,Form</strong>). Each student receives an automatically generated Library ID and a default profile picture.';
+      const help=bulk.querySelector('.scanner-help');
+      if(help) help.innerHTML='<strong>Required columns:</strong> Name, Class (or Form)<br><strong>Example:</strong><br><code>Name,Class</code><br><code>John Banda,Form 1</code><br><br>IDs are generated automatically as <strong>MGZ/0001</strong>, <strong>MGZ/0002</strong>, and so on. Do not include a Library ID column.';
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
+
+<script>
+/* MZUGOSS catalogue reliability patch: unique IDs, automatic departmental shelving,
+   alphabetic shelf columns, and flexible book-file imports. */
+(function(){
+  const $ = id => document.getElementById(id);
+  const text = v => String(v == null ? '' : v).trim();
+  const esc = v => text(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const forms = ['Form 4','Form 3','Form 2','Form 1'];
+  const deptOrder = ['Technical','Science','Language','Humanities'];
+
+  function categoryDepartment(category, title, author){
+    const raw = (text(category)+' '+text(title)+' '+text(author)).toLowerCase();
+    if(/agri|computer|ict|technical|business|account|commerce|entrepreneur|design|technology|engineering|woodwork|metalwork|building|home economics|fashion|textile/.test(raw)) return 'Technical';
+    if(/science|biology|biolog|\bbio\b|chemistry|chemical|physics|mathematics|maths|algebra|geometry|agronomy|anatomy|physiology/.test(raw)) return 'Science';
+    if(/language|english|chichewa|french|literature|grammar|linguistics|communication|novel|poetry/.test(raw)) return 'Language';
+    if(/history|geography|humanities|social|civic|religious|religion|bible|christian|islam|life skills|development studies|government|politics|sociology|psychology/.test(raw)) return 'Humanities';
+    return 'Humanities';
+  }
+  window.getBookDepartment = categoryDepartment;
+  window.calculateAutomaticShelf = function(book){
+    const dept = categoryDepartment(book.category, book.title, book.author);
+    const clsRaw = text(book.className || book.bookClass);
+    const cls = forms.includes(clsRaw) ? clsRaw : 'Not specified';
+    const level = cls === 'Not specified' ? 5 : forms.indexOf(cls)+1;
+    const title = text(book.title || book.name);
+    const same = (Array.isArray(books)?books:[]).filter(b => String(b.id)!==String(book.id) && categoryDepartment(b.category,b.title,b.author)===dept && text(b.className||b.bookClass)===cls);
+    same.sort((a,b)=>text(a.title||a.name).localeCompare(text(b.title||b.name),undefined,{sensitivity:'base',numeric:true}));
+    let position=1;
+    for(const b of same){ if(text(b.title||b.name).localeCompare(title,undefined,{sensitivity:'base',numeric:true})<0) position++; }
+    return {shelfNumber:dept+' Department Shelf',shelfSection:dept,shelfRow:cls==='Not specified'?'Level 5 • Form not specified':cls+' • Level '+level,shelfPosition:(cls==='Not specified'?'Unclassified':'Level '+level)+' • Column '+String(position).padStart(2,'0'),shelfColumn:position,department:dept};
+  };
+  window.sortBooksByDepartmentAndForm = function(){
+    books.sort((a,b)=>{
+      const da=deptOrder.indexOf(categoryDepartment(a.category,a.title,a.author));
+      const db=deptOrder.indexOf(categoryDepartment(b.category,b.title,b.author));
+      if(da!==db) return da-db;
+      const fa=forms.indexOf(text(a.className||a.bookClass));
+      const fb=forms.indexOf(text(b.className||b.bookClass));
+      const la=fa<0?9:fa, lb=fb<0?9:fb;
+      if(la!==lb) return la-lb;
+      return text(a.title||a.name).localeCompare(text(b.title||b.name),undefined,{sensitivity:'base',numeric:true});
+    });
+  };
+  window.refreshAllBookShelves = function(){
+    window.sortBooksByDepartmentAndForm();
+    books.forEach(b=>Object.assign(b,window.calculateAutomaticShelf(b)));
+  };
+  window.applyAutomaticShelfToForm = function(){
+    const title=text($('bookTitle')?.value), category=text($('bookCategory')?.value), cls=text($('bookClass')?.value), author=text($('bookAuthor')?.value);
+    const shelf=window.calculateAutomaticShelf({title,category,className:cls,author,id:'__new_book_form__'});
+    if($('bookShelfNumber')) $('bookShelfNumber').value=shelf.shelfNumber;
+    if($('bookShelfSection')) $('bookShelfSection').value=shelf.shelfSection;
+    if($('bookShelfRow')) $('bookShelfRow').value=shelf.shelfRow;
+    if($('bookShelfPosition')) $('bookShelfPosition').value=shelf.shelfPosition;
+  };
+  function uniqueBarcode(){
+    const all=new Set((Array.isArray(books)?books:[]).map(b=>text(b.barcode).toLowerCase()).filter(Boolean));
+    let n=1, code=''; do { code='MGZ-BK-'+String(n++).padStart(6,'0'); } while(all.has(code.toLowerCase()));
+    return code;
+  }
+  function normaliseForm(value){
+    const v=text(value).replace(/\s+/g,' ');
+    const m=v.match(/^(?:form\s*)?([1-4])$/i);
+    return m ? 'Form '+m[1] : (forms.includes(v)?v:'Not specified');
+  }
+  function duplicate(title,author,barcode){
+    return books.find(b=>(barcode && text(b.barcode).toLowerCase()===barcode.toLowerCase()) || (text(b.title||b.name).toLowerCase()===title.toLowerCase() && (!author || !text(b.author) || text(b.author).toLowerCase()===author.toLowerCase())));
+  }
+  function refreshViews(){
+    window.refreshAllBookShelves();
+    if(typeof saveData==='function') saveData();
+    if(typeof updateStats==='function') updateStats();
+    if(typeof updateAdminDashboard==='function') updateAdminDashboard();
+    if(typeof displaySubjectStatistics==='function') displaySubjectStatistics();
+    if(typeof displayBooks==='function') displayBooks();
+  }
+  window.addBook = function(){
+    const title=text($('bookTitle')?.value), author=text($('bookAuthor')?.value), category=text($('bookCategory')?.value)||'Other';
+    const cls=normaliseForm($('bookClass')?.value), bookNumber='';
+    let barcode=text($('bookBarcode')?.value);
+    const quantity=Math.max(1,parseInt($('bookQuantity')?.value,10)||1);
+    if(!title){alert('Please enter the full book name.');$('bookTitle')?.focus();return;}
+    if(!author){alert('Please enter the book author.');$('bookAuthor')?.focus();return;}
+    if(!barcode) barcode=uniqueBarcode();
+    const dup=duplicate(title,author,barcode);
+    if(dup){alert('This book title/author or barcode is already registered. The existing record was not duplicated.');return;}
+    const book={id:Date.now()+Math.floor(Math.random()*1000),title,author,category,publisher:category,className:cls==='Not specified'?'':cls,bookNumber,barcode,quantity,available:quantity};
+    Object.assign(book,window.calculateAutomaticShelf(book));
+    books.push(book); refreshViews();
+    const msg=$('addBookLookupResult'); if(msg) msg.innerHTML='<div class="lookup-result">Book saved successfully. Barcode: <strong>'+esc(barcode)+'</strong>; Department: <strong>'+esc(book.shelfSection)+'</strong>; Shelf level: <strong>'+esc(book.shelfRow)+'</strong>; Column: <strong>'+esc(book.shelfColumn)+'</strong>.</div>';
+    if(typeof resetBookForm==='function') resetBookForm();
+    if($('bookBarcode')) $('bookBarcode').value='';
+    if(msg) msg.innerHTML='<div class="lookup-result">Book saved successfully. Barcode: <strong>'+esc(barcode)+'</strong>; Department: <strong>'+esc(book.shelfSection)+'</strong>; Shelf level: <strong>'+esc(book.shelfRow)+'</strong>; Column: <strong>'+esc(book.shelfColumn)+'</strong>.</div>';
+  };
+  window.importBooksFromFile = function(){
+    const input=$('bookImportFile'), file=input?.files?.[0];
+    if(!file){alert('Please choose a book CSV or TXT file.');return;}
+    const reader=new FileReader();
+    reader.onload=function(ev){
+      try{
+        const rows=parseCSV(String(ev.target.result||''));
+        if(rows.length<2) throw new Error('The file needs a header row and at least one book row.');
+        const headers=rows[0];
+        const ti=findColumn(headers,['title','fullnameofbook','booktitle','bookname','name']);
+        const ci=findColumn(headers,['publisher','category','subject','bookcategory']);
+        const fi=findColumn(headers,['class','form','bookclass','level']);
+        const ai=findColumn(headers,['author','bookauthor']);
+        const bi=findColumn(headers,['barcode','barcodenumber','isbn']);
+        const ni=findColumn(headers,['booknumber','librarybooknumber','accessionnumber','printednumber']);
+        const qi=findColumn(headers,['quantity','copies','availablecopies','qty']);
+        if(ti<0 || ci<0 || fi<0) throw new Error('Required columns: Book Name, Publisher, Class. Author, Barcode and Quantity are optional.');
+        let created=0, skipped=0; const errors=[];
+        rows.slice(1).forEach((row,i)=>{
+          const title=text(row[ti]), category=text(row[ci])||'Other', cls=normaliseForm(row[fi]);
+          const author=ai>=0?text(row[ai]):'';
+          let barcode=bi>=0?text(row[bi]):'';
+          const bookNumber='';
+          const quantity=Math.max(1,parseInt(qi>=0?row[qi]:1,10)||1);
+          if(!title || !text(row[fi])){skipped++;errors.push('Row '+(i+2)+': book name or class is missing.');return;}
+          if(!barcode) barcode=uniqueBarcode();
+          const dup=duplicate(title,author,barcode);
+          if(dup){skipped++;errors.push('Row '+(i+2)+': duplicate book name/author or barcode; existing record kept.');return;}
+          const book={id:Date.now()+created+Math.floor(Math.random()*10000),title,author,category,publisher:category,className:cls==='Not specified'?'':cls,bookNumber,barcode,quantity,available:quantity};
+          Object.assign(book,window.calculateAutomaticShelf(book)); books.push(book); created++;
+        });
+        refreshViews();
+        const result=$('bookImportResult');
+        if(result) result.innerHTML='<div class="lookup-result"><strong>'+created+'</strong> book(s) imported. <strong>'+skipped+'</strong> row(s) skipped.'+(errors.length?'<br><br><strong>Details:</strong><br>'+errors.map(esc).join('<br>'):'')+'<br><br>Department, form level, and alphabetical shelf column were assigned automatically. Barcode numbers were generated for rows without one.</div>';
+        if(input) input.value='';
+      }catch(err){const result=$('bookImportResult');if(result)result.innerHTML='<div class="duplicate-warning">'+esc(err.message||'Could not import this file.')+'</div>';else alert(err.message||'Could not import this file.');}
+    };
+    reader.readAsText(file);
+  };
+  // If the scanned code contains a known printed category, select it; otherwise preserve the user's selection.
+  const oldHandle=window.handleScannedBarcode;
+  window.handleScannedBarcode=function(code){
+    const clean=text(code), upper=clean.toUpperCase();
+    if(typeof scannerPurpose!=='undefined' && scannerPurpose==='add'){
+      const map=[['EXCELL','EXCELL'],['EXCEL','EXCELL'],['SUCCEED','SUCCEED'],['SUCCEEDED','SUCCEED'],['ACHIEVER','ACHIEVER'],['ARCHIEVER','ARCHIEVER'],['ARCHIVER','ARCHIVER'],['CHANCO','CHANCO'],['TARGET','TARGET'],['ARISE','ARISE WITH'],['JHANGO','JHANGO']];
+      const found=map.find(([key])=>upper.includes(key));
+      if(found && $('bookCategory')) $('bookCategory').value=found[1];
+      if($('bookBarcode')) $('bookBarcode').value=clean;
+      if(typeof lookupBookByBarcode==='function') lookupBookByBarcode('add');
+      window.applyAutomaticShelfToForm();
+      return;
+    }
+    if(typeof oldHandle==='function') return oldHandle(code);
+  };
+  function updateImportHelp(){
+    const panel=$('bulkBooks'); if(!panel) return;
+    let help=panel.querySelector('.book-import-format-help');
+    if(!help){help=document.createElement('div');help.className='scanner-help book-import-format-help';const input=$('bookImportFile');if(input&&input.parentElement)input.parentElement.appendChild(help);else panel.appendChild(help);}
+    help.innerHTML='<strong>Required CSV columns:</strong> BookName,Publisher,Class<br><strong>Optional columns:</strong> Author,Barcode,Quantity<br><strong>Example:</strong><br><code>BookName,Publisher,Class,Author,Barcode,Quantity</code><br><code>Agriculture Principles,EXCELL,Form 1,John Banda,,5</code><br><code>Biology,SUCCEED,Form 2,Jane Phiri,BC-002,3</code><br>The subject is identified from the book name. Shelf columns are assigned alphabetically by subject/book name; shelf rows are grouped by class and publisher. If Barcode is blank, a unique barcode is generated.';
+  }
+  function init(){
+    updateImportHelp();
+    ['bookTitle','bookCategory','bookClass','bookAuthor'].forEach(id=>$(id)?.addEventListener('input',window.applyAutomaticShelfToForm));
+    ['bookCategory','bookClass'].forEach(id=>$(id)?.addEventListener('change',window.applyAutomaticShelfToForm));
+    window.applyAutomaticShelfToForm();
+    if(Array.isArray(books)){window.refreshAllBookShelves();if(typeof saveData==='function')saveData();}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
+
+<style id="mzugoss-final-visibility-fix">
+html,html[data-theme],html[data-theme="dark"],html[data-theme="light"]{color-scheme:light!important;}
+html[data-theme="dark"] body,body{background:#f4f7fb!important;color:#172033!important;}
+html[data-theme="dark"] *,html[data-theme="light"] *{color-scheme:light!important;}
+.ui-theme-toggle{display:none!important}
+#adminPanel .admin-content.admin-section-mode{display:block!important;}
+#adminPanel .admin-content.admin-section-mode>.admin-section{display:none!important;}
+#adminPanel .admin-content.admin-section-mode>.admin-section.active{display:block!important;visibility:visible!important;opacity:1!important;}
+#adminPanel .admin-content:not(.admin-section-mode)>.admin-section{display:none!important;}
+#adminPanel .admin-content:not(.admin-section-mode)>.admin-menu{display:flex!important;}
+#adminPanel .admin-section-back{display:inline-flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:18px;}
+#adminPanel .admin-section{background:#fff;color:#172033;border:1px solid #dfe6f1;border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(24,39,75,.07);}
+#adminPanel .admin-section h2,#adminPanel .admin-section label,#adminPanel .admin-section p{color:#172033;}
+#adminPanel input,#adminPanel select,#adminPanel textarea{background:#fff!important;color:#172033!important;border:1px solid #cbd5e1!important;}
+#librarianSystem .librarian-back-home{margin-left:auto!important;background:#fff!important;color:#17315d!important;border:1px solid #d9e2ef!important;border-radius:10px!important;padding:10px 14px!important;}
+.scan-number-row{display:flex;gap:8px;align-items:center;}
+.scan-number-row input{flex:1;min-width:0;}
+.scan-number-help{font-size:13px;color:#52627a!important;margin:5px 0 14px;}
+@media(max-width:900px){#adminPanel .admin-content.admin-section-mode{display:block!important}.scan-number-row{flex-wrap:wrap}}
+</style>
+<script>
+(function(){
+ const byId=id=>document.getElementById(id);
+ const safeText=v=>String(v==null?'':v).trim();
+ function ensureChoiceSection(id,title,description,choices){
+   let section=byId(id);
+   const content=document.querySelector('#adminPanel .admin-content');
+   if(!content)return;
+   if(!section){section=document.createElement('section');section.id=id;section.className='admin-section';content.appendChild(section);}
+   section.innerHTML='<h2>'+title+'</h2><p>'+description+'</p><div class="admin-choice-grid">'+choices.map(c=>'<article class="admin-choice-card"><h3>'+c.title+'</h3><p>'+c.description+'</p><button type="button" data-open-section="'+c.section+'">'+c.label+'</button></article>').join('')+'</div>';
+   section.querySelectorAll('[data-open-section]').forEach(b=>b.addEventListener('click',()=>window.showAdminSection(b.dataset.openSection)));
+ }
+ function ensureSectionBackButtons(){
+   document.querySelectorAll('#adminPanel .admin-section').forEach(section=>{
+     if(section.id==='adminDashboard'||section.querySelector('.admin-section-back'))return;
+     const b=document.createElement('button');b.type='button';b.className='admin-section-back';b.textContent='← Back to Administrator Tabs';b.addEventListener('click',()=>window.returnAdminTabs());section.insertBefore(b,section.firstChild);
+   });
+ }
+ window.returnAdminTabs=function(){
+   const content=document.querySelector('#adminPanel .admin-content');
+   if(content)content.classList.remove('admin-section-mode');
+   document.querySelectorAll('#adminPanel .admin-section').forEach(s=>s.classList.remove('active'));
+   document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current')});
+   const menu=document.querySelector('#adminPanel .admin-menu');if(menu)menu.style.removeProperty('display');
+   document.querySelector('#adminPanel .admin-content')?.scrollIntoView({behavior:'smooth',block:'start'});
+ };
+ window.showAdminSection=function(id){
+   const content=document.querySelector('#adminPanel .admin-content');if(!content)return;
+   content.classList.add('admin-section-mode');
+   document.querySelectorAll('#adminPanel .admin-section').forEach(s=>s.classList.remove('active'));
+   const target=byId(id);
+   if(!target){content.classList.remove('admin-section-mode');console.error('Missing Administrator section:',id);return;}
+   target.classList.add('active');
+   document.querySelectorAll('#adminPanel .admin-menu .admin-tab').forEach(b=>{const active=b.dataset.section===id;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+   if(id==='studentRecords'&&typeof displayAdminClasses==='function')displayAdminClasses();
+   if(id==='droppedStudents'&&typeof displayDroppedStudents==='function')displayDroppedStudents();
+   if(id==='alumniStudents'&&typeof showAlumniYears==='function')showAlumniYears();
+   if(id==='subjectStatistics'&&typeof displaySubjectStatistics==='function')displaySubjectStatistics();
+   if(id==='adminBookManagement')renderAdminBookManagement();
+   if(id==='registerStudent'&&typeof refreshNextStudentNumber==='function')refreshNextStudentNumber();
+   target.scrollIntoView({behavior:'smooth',block:'start'});
+ };
+ function renderAdminBookManagement(){
+   const box=byId('adminBookManagement');if(!box)return;
+   let list=box.querySelector('.admin-book-list');if(!list){list=document.createElement('div');list.className='admin-book-list books';box.appendChild(list);}
+   const esc=v=>safeText(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+   list.innerHTML=(typeof books!=='undefined'&&Array.isArray(books)?books:[]).map(b=>'<article class="book book-card"><h3>'+esc(b.title||b.name||'Untitled book')+'</h3><p><strong>Author:</strong> '+esc(b.author||'Not recorded')+'</p><p><strong>Barcode:</strong> '+esc(b.barcode||'Not recorded')+'</p><p><strong>Available:</strong> '+esc(b.available??b.quantity??0)+'</p><button type="button" onclick="deleteBook('+Number(b.id)+')">Delete Book</button></article>').join('')||'<p>No books have been registered yet.</p>';
+ }
+ function addLibrarianBack(){
+   const nav=document.querySelector('#librarianSystem > nav');if(!nav)return;
+   nav.querySelectorAll('button[onclick*="openAdminFromLibrarian"],#adminReturnButton').forEach(b=>b.remove());
+   let back=nav.querySelector('.librarian-back-home');
+   if(!back){back=document.createElement('button');back.type='button';back.className='librarian-back-home';back.innerHTML='← <span>Back to Dashboards</span>';back.addEventListener('click',()=>{if(typeof backToDashboards==='function')backToDashboards();});nav.appendChild(back);}
+ }
+ function addScanNumberFields(){
+   const borrowBarcode=byId('borrowBookNumber');
+   if(borrowBarcode&&!byId('borrowPrintedBookNumber')){
+     const wrap=document.createElement('div');wrap.className='borrow-printed-number-wrap';wrap.innerHTML='<label for="borrowPrintedBookNumber">Printed Library Book Number (scan the number inside the book)</label><div class="scan-number-row"><input id="borrowPrintedBookNumber" autocomplete="off" placeholder="Scan or enter printed book number"><button type="button" class="scan-btn" onclick="openBarcodeScanner(&quot;borrow-number&quot;)">Scan Number</button></div><p class="scan-number-help">Use the barcode scanner while this field is focused. This is separate from the barcode on the cover.</p>';
+     const result=byId('borrowBookLookupResult');if(result)result.parentNode.insertBefore(wrap,result);else borrowBarcode.parentNode.insertAdjacentElement('afterend',wrap);
+   }
+   const returnBarcode=byId('returnBarcode');
+   if(returnBarcode&&!byId('returnPrintedBookNumber')){
+     const wrap=document.createElement('div');wrap.className='return-printed-number-wrap';wrap.innerHTML='<label for="returnPrintedBookNumber">Printed Library Book Number (inside the book)</label><div class="scan-number-row"><input id="returnPrintedBookNumber" autocomplete="off" placeholder="Scan or enter printed book number"><button type="button" class="scan-btn" onclick="openBarcodeScanner(&quot;return-number&quot;)">Scan Number</button></div><p class="scan-number-help">Scan the cover barcode in the field above, then scan the printed library number here.</p>';
+     const result=byId('returnBarcodeResult');if(result)result.parentNode.insertBefore(wrap,result);else returnBarcode.insertAdjacentElement('afterend',wrap);
+   }
+ }
+ function init(){
+   document.documentElement.dataset.theme='light';try{localStorage.setItem('mz_theme','light')}catch(e){}
+   document.querySelectorAll('.ui-theme-toggle').forEach(b=>b.remove());
+   ensureChoiceSection('studentRegistrationChoices','Register Students','Choose one of the two student registration methods.',[
+     {title:'Register One Student',description:'Enter the student name, choose Form 1–Form 4, add a profile picture, and save. A unique MGZ/0001-style ID is assigned automatically.',section:'registerStudent',label:'Register One Student'},
+     {title:'Import Students from File',description:'Upload a CSV or TXT file with Name and Class columns. Each student receives a unique library ID.',section:'bulkStudents',label:'Import Student File'}
+   ]);
+   ensureChoiceSection('bookRegistrationChoices','Add Book','Choose how to add books to the catalogue.',[
+     {title:'Add One Book',description:'Enter book name, author, category, form, quantity and barcode. The printed book number is captured only during borrowing and returning.',section:'adminAddBook',label:'Add One Book'},
+     {title:'Import Book File',description:'Import multiple books from a CSV or TXT file. Department, form shelf level and alphabetical column are assigned automatically.',section:'bulkBooks',label:'Import Book File'}
+   ]);
+   if(!byId('adminBookManagement')){const sec=document.createElement('section');sec.id='adminBookManagement';sec.className='admin-section';sec.innerHTML='<h2>Manage Books</h2><p>Delete books from the Administrator panel only.</p>';document.querySelector('#adminPanel .admin-content')?.appendChild(sec);}
+   const menu=document.querySelector('#adminPanel .admin-menu');
+   if(menu&&!menu.querySelector('[data-section="adminBookManagement"]')){const b=document.createElement('button');b.type='button';b.className='admin-tab';b.dataset.section='adminBookManagement';b.textContent='Manage Books';b.addEventListener('click',()=>window.showAdminSection('adminBookManagement'));const back=menu.querySelector('.admin-back-home');if(back)back.insertAdjacentElement('afterend',b);else menu.prepend(b);}
+   ensureSectionBackButtons();
+   // Existing sections must all be siblings under .admin-content for visibility rules to work.
+   const content=document.querySelector('#adminPanel .admin-content');
+   if(content)content.querySelectorAll('.admin-section').forEach(s=>{if(s.parentElement!==content)content.appendChild(s)});
+   document.querySelectorAll('#adminPanel .admin-menu button[data-section="registerStudent"],#adminPanel .admin-menu button[data-section="bulkStudents"],#adminPanel .admin-menu button[data-section="bulkBooks"],#adminPanel .admin-menu button[data-section="adminAddBook"]').forEach(b=>b.remove());
+   addLibrarianBack();addScanNumberFields();
+   // Keep the admin menu's Back button separate from section Back buttons.
+   const adminHomeBack=document.querySelector('#adminPanel .admin-back-home');if(adminHomeBack){adminHomeBack.onclick=()=>{if(typeof backToDashboards==='function')backToDashboards()};}
+   if(typeof refreshNextStudentNumber==='function')refreshNextStudentNumber();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+ // Scanner support: save/verify both the cover barcode and the printed number inside the book.
+ const oldScannerHandler=window.handleScannedBarcode;
+ window.handleScannedBarcode=function(code){
+   const purpose=(typeof scannerPurpose!=='undefined')?scannerPurpose:'';
+   if(purpose==='borrow-number'){const input=byId('borrowPrintedBookNumber');if(input){input.value=safeText(code);input.dispatchEvent(new Event('input',{bubbles:true}));}if(typeof stopBarcodeScanner==='function')stopBarcodeScanner();return;}
+   if(purpose==='return-number'){const input=byId('returnPrintedBookNumber');if(input){input.value=safeText(code);input.dispatchEvent(new Event('input',{bubbles:true}));}if(typeof stopBarcodeScanner==='function')stopBarcodeScanner();return;}
+   if(typeof oldScannerHandler==='function')return oldScannerHandler(code);
+ };
+ const oldConfirmBorrow=window.confirmBorrow;
+ window.confirmBorrow=function(){
+   const typed=safeText(byId('borrowPrintedBookNumber')?.value);
+   const code=safeText(byId('borrowBookNumber')?.value);
+   const book=(typeof books!=='undefined'&&Array.isArray(books))?books.find(b=>String(b.barcode||'').toLowerCase()===code.toLowerCase()):null;
+   if(book&&safeText(book.bookNumber)&&typed.toLowerCase()!==safeText(book.bookNumber).toLowerCase()){alert('The printed library book number does not match this book. Scan the number printed inside the book.');return;}
+   const before=(typeof borrowed!=='undefined'&&Array.isArray(borrowed))?borrowed.length:0;
+   if(typeof oldConfirmBorrow==='function')oldConfirmBorrow();
+   if(typeof borrowed!=='undefined'&&Array.isArray(borrowed)&&borrowed.length>before){borrowed[0].printedBookNumber=typed;if(typeof saveData==='function')saveData();}
+ };
+ const oldConfirmReturn=window.confirmReturnPassword;
+ window.confirmReturnPassword=function(){
+   const item=(typeof borrowed!=='undefined'&&Array.isArray(borrowed))?borrowed.find(b=>String(b.id)===String(typeof selectedReturnId!=='undefined'?selectedReturnId:'')):null;
+   const typed=safeText(byId('returnPrintedBookNumber')?.value);
+   if(item){const book=(typeof books!=='undefined'&&Array.isArray(books))?books.find(b=>String(b.id)===String(item.bookId)):null;const expected=safeText(item.printedBookNumber||(book&&book.bookNumber));if(expected&&typed.toLowerCase()!==expected.toLowerCase()){const err=byId('returnPasswordError');if(err)err.textContent='The printed library book number does not match. Scan the number printed inside the book.';else alert('Printed library book number does not match.');return;}}
+   if(typeof oldConfirmReturn==='function')return oldConfirmReturn();
+ };
+})();
+</script>
+
+<style id="manage-books-delete-red-fix">
+.delete-book-btn, .admin-book-list .delete-book-btn, #adminBookManagement button[onclick*="deleteBook"] {
+  background:#c62828 !important; color:#fff !important; border:1px solid #a71919 !important;
+  font-weight:700 !important; border-radius:8px !important; padding:10px 16px !important;
+  cursor:pointer !important; box-shadow:0 2px 5px rgba(150,0,0,.18) !important;
+}
+.delete-book-btn:hover, #adminBookManagement button[onclick*="deleteBook"]:hover { background:#a71919 !important; }
+#adminBookManagement .book-card { border:1px solid #e5b5b5; }
+</style>
+<script id="manage-books-delete-red-fix-script">
+(function(){
+  function paintManageBooks(){
+    const box=document.getElementById('adminBookManagement');
+    if(!box)return;
+    const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    let list=box.querySelector('.admin-book-list');
+    if(!list){list=document.createElement('div');list.className='admin-book-list books';box.appendChild(list);}
+    const data=Array.isArray(window.books)?window.books:[];
+    list.innerHTML=data.map(b=>'<article class="book book-card"><h3>'+esc(b.title||b.name||'Untitled book')+'</h3><p><strong>Author:</strong> '+esc(b.author||'Not recorded')+'</p><p><strong>Barcode:</strong> '+esc(b.barcode||'Not recorded')+'</p><p><strong>Department:</strong> '+esc(b.shelfSection||b.department||'Not assigned')+'</p><p><strong>Shelf level:</strong> '+esc(b.shelfRow||'Not assigned')+'</p><p><strong>Available:</strong> '+esc(b.available??b.quantity??0)+'</p><button type="button" class="delete-book-btn" onclick="deleteBook('+Number(b.id)+')">Delete Book</button></article>').join('')||'<p>No books have been registered yet.</p>';
+  }
+  document.addEventListener('DOMContentLoaded',paintManageBooks);
+  const oldShow=window.showAdminSection;
+  if(typeof oldShow==='function')window.showAdminSection=function(id){const result=oldShow.apply(this,arguments);if(id==='adminBookManagement')paintManageBooks();return result;};
+  const oldDisplay=window.displayBooks;
+  if(typeof oldDisplay==='function')window.displayBooks=function(){const r=oldDisplay.apply(this,arguments);paintManageBooks();return r;};
+  document.addEventListener('click',e=>{if(e.target.closest('#adminBookManagement')){setTimeout(paintManageBooks,0);}});
+})();
+</script>
+
+
+<style id="mzugoss-latest-dashboard-fixes">
+#adminDashboard .admin-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
+#adminDashboard .admin-stat{min-width:0}
+.mzugoss-live-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0 22px}
+.mzugoss-live-stat{background:#fff;border:1px solid #dce5f0;border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(25,45,75,.06)}
+.mzugoss-live-stat strong{display:block;font-size:1.7rem;color:#174ea6;line-height:1.25}
+.mzugoss-live-stat span{display:block;color:#334155;font-size:.92rem;margin-top:5px}
+#librarianSystem>nav{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap!important}
+#librarianSystem>nav>div:last-child{margin-left:auto!important;justify-content:flex-end!important}
+</style>
+<script id="mzugoss-final-dashboard-promotion-id-fix">
+(function(){
+ const $=id=>document.getElementById(id);
+ const txt=v=>String(v==null?'':v).trim();
+ const idNumber=value=>{const m=txt(value).match(/^(?:MGZ|MZG)[\/-]?(\d+)$/i);return m?parseInt(m[1],10):null;};
+
+ // Reuse the lowest free MGZ number among currently active students only.
+ // Dropped/alumni records keep their former ID separately for historical borrowing records.
+ window.getNextStudentNumber=function(){
+   const used=new Set((Array.isArray(students)?students:[]).map(s=>idNumber(s.libraryId)).filter(n=>Number.isInteger(n)&&n>0));
+   let n=1;while(used.has(n))n++;
+   return 'MGZ/'+String(n).padStart(4,'0');
+ };
+ window.refreshNextStudentNumber=function(){const input=$('newStudentLibraryId');if(input)input.value=window.getNextStudentNumber();};
+ // Keep legacy form handlers using the same ID allocator.
+ try{getNextStudentNumber=window.getNextStudentNumber;refreshNextStudentNumber=window.refreshNextStudentNumber;}catch(e){}
+
+ function keepHistoricalId(record){
+   if(record && txt(record.libraryId)){
+     if(!record.formerLibraryId)record.formerLibraryId=record.libraryId;
+     record.libraryId='';
+   }
+   return record;
+ }
+ function normalizeInactiveIds(){
+   if(Array.isArray(droppedStudents))droppedStudents.forEach(keepHistoricalId);
+   if(Array.isArray(alumniStudents))alumniStudents.forEach(keepHistoricalId);
+ }
+ // Preserve old ID for book-history matching while freeing the live ID for a new student.
+ const priorArchive=window.archiveStudentsToAlumni;
+ if(typeof priorArchive==='function')window.archiveStudentsToAlumni=function(items,goneYear){
+   const result=priorArchive.apply(this,arguments);normalizeInactiveIds();if(typeof saveData==='function')saveData();return result;
+ };
+ const priorDrop=window.dropActiveStudent;
+ if(typeof priorDrop==='function')window.dropActiveStudent=function(){const result=priorDrop.apply(this,arguments);normalizeInactiveIds();if(typeof saveData==='function')saveData();return result;};
+ const priorDelete=window.deleteStudent;
+ if(typeof priorDelete==='function')window.deleteStudent=function(){const result=priorDelete.apply(this,arguments);normalizeInactiveIds();if(typeof saveData==='function')saveData();return result;};
+ const priorDeleteSelected=window.deleteSelectedStudents;
+ if(typeof priorDeleteSelected==='function')window.deleteSelectedStudents=function(){const result=priorDeleteSelected.apply(this,arguments);normalizeInactiveIds();if(typeof saveData==='function')saveData();return result;};
+
+ // Keep Alumni book-history matched to the original student ID after that ID is released.
+ const oldAlumniRecords=window.displayAlumniBookRecords;
+ window.displayAlumniBookRecords=function(tab){
+   if(typeof oldAlumniRecords!=='function')return;
+   const alumni=Array.isArray(alumniStudents)?alumniStudents:[];
+   const ids=alumni.map(s=>s.formerLibraryId||s.libraryId).filter(Boolean);
+   const origFind=Array.prototype.find;
+   // Existing renderer compares record.studentId against student.libraryId; temporarily expose old IDs only while rendering.
+   alumni.forEach(s=>{if(!s.libraryId&&s.formerLibraryId)s.libraryId=s.formerLibraryId;});
+   try{return oldAlumniRecords.apply(this,arguments);}finally{alumni.forEach(s=>{if(s.formerLibraryId&&s.libraryId===s.formerLibraryId)s.libraryId='';});}
+ };
+
+ // Promote only currently active students; dropped and alumni lists are never included.
+ const oldPromote=window.promoteClasses;
+ window.promoteClasses=function(){
+   if(!Array.isArray(students))return;
+   const form4=students.filter(s=>(s.form||s.formName)==='Form 4');
+   if(form4.length){alert('Archive Form 4 students to Alumni first. Only active Form 1–Form 3 students will be promoted.');return;}
+   const counts={f1:students.filter(s=>(s.form||s.formName)==='Form 1').length,f2:students.filter(s=>(s.form||s.formName)==='Form 2').length,f3:students.filter(s=>(s.form||s.formName)==='Form 3').length};
+   if(!confirm('Promote active students?\n\nForm 1 → Form 2: '+counts.f1+'\nForm 2 → Form 3: '+counts.f2+'\nForm 3 → Form 4: '+counts.f3+'\n\nDropped students and Alumni will not be promoted.'))return;
+   students=students.map(s=>{const f=s.form||s.formName;if(f==='Form 3')return {...s,form:'Form 4',formName:'Form 4'};if(f==='Form 2')return {...s,form:'Form 3',formName:'Form 3'};if(f==='Form 1')return {...s,form:'Form 2',formName:'Form 2'};return s;});
+   if(typeof saveData==='function')saveData();if(typeof updateStudentSuggestions==='function')updateStudentSuggestions();if(typeof displayAdminClasses==='function')displayAdminClasses();if(typeof updateAdminDashboard==='function')updateAdminDashboard();alert('Active students have been promoted successfully.');
+ };
+
+ function liveStats(){
+   const panel=$('librarianSystem');if(!panel)return;
+   let box=$('mzugossLibrarianLiveStats');
+   if(!box){box=document.createElement('div');box.id='mzugossLibrarianLiveStats';box.className='mzugoss-live-stats';const nav=panel.querySelector(':scope > nav');if(nav)nav.insertAdjacentElement('afterend',box);else panel.insertBefore(box,panel.firstChild);}
+   const allBooks=Array.isArray(books)?books:[];const allBorrowed=Array.isArray(borrowed)?borrowed:[];
+   const available=allBooks.reduce((n,b)=>n+Math.max(0,Number(b.available??b.quantity??0)),0);
+   const current=allBorrowed.filter(b=>!b.returned);
+   const borrowers=new Set(current.map(b=>b.studentId||b.libraryId).filter(Boolean));
+   box.innerHTML='<div class="mzugoss-live-stat"><strong>'+available+'</strong><span>Available book copies</span></div><div class="mzugoss-live-stat"><strong>'+current.length+'</strong><span>Books currently borrowed</span></div><div class="mzugoss-live-stat"><strong>'+borrowers.size+'</strong><span>Students currently borrowing</span></div>';
+ }
+ function refreshAdminHome(){
+   normalizeInactiveIds();
+   if(typeof updateAdminDashboard==='function'){
+     const old=window.updateAdminDashboard;
+     // The original function is already responsible for existing totals; refresh the extra cards afterward.
+     try{old.call(window);}catch(e){}
+   }
+   const dash=$('adminDashboard');if(!dash)return;
+   let extra=$('mzugossAdminLiveStats');if(!extra){extra=document.createElement('div');extra.id='mzugossAdminLiveStats';extra.className='mzugoss-live-stats';const grid=dash.querySelector('.admin-stat-grid');if(grid)grid.insertAdjacentElement('afterend',extra);else dash.appendChild(extra);}
+   const allBooks=Array.isArray(books)?books:[];const allBorrowed=Array.isArray(borrowed)?borrowed:[];const current=allBorrowed.filter(b=>!b.returned);
+   const available=allBooks.reduce((n,b)=>n+Math.max(0,Number(b.available??b.quantity??0)),0);const borrowers=new Set(current.map(b=>b.studentId||b.libraryId).filter(Boolean));
+   extra.innerHTML='<div class="mzugoss-live-stat"><strong>'+available+'</strong><span>Available book copies</span></div><div class="mzugoss-live-stat"><strong>'+current.length+'</strong><span>Books currently borrowed</span></div><div class="mzugoss-live-stat"><strong>'+borrowers.size+'</strong><span>Students currently borrowing</span></div><div class="mzugoss-live-stat"><strong>'+(Array.isArray(students)?students.length:0)+'</strong><span>Active students</span></div>';
+ }
+ const originalVerify=window.verifyAdminPassword;
+ if(typeof originalVerify==='function')window.verifyAdminPassword=function(){const before=sessionStorage.getItem('mzugossRole');const result=originalVerify.apply(this,arguments);if(sessionStorage.getItem('mzugossRole')==='admin'&&$('adminPanel')&&$('adminPanel').style.display!=='none'){setTimeout(()=>{if(typeof window.showAdminSection==='function')window.showAdminSection('adminDashboard');refreshAdminHome();},0);}return result;};
+ const originalShow=window.showAdminSection;
+ if(typeof originalShow==='function')window.showAdminSection=function(id){const r=originalShow.apply(this,arguments);if(id==='adminDashboard')setTimeout(refreshAdminHome,0);return r;};
+ const oldOpenLib=window.openLibrarian;
+ if(typeof oldOpenLib==='function')window.openLibrarian=function(){const r=oldOpenLib.apply(this,arguments);setTimeout(liveStats,0);return r;};
+ const oldOpenLibAdmin=window.openLibrarianFromAdmin;
+ if(typeof oldOpenLibAdmin==='function')window.openLibrarianFromAdmin=function(){const r=oldOpenLibAdmin.apply(this,arguments);setTimeout(liveStats,0);return r;};
+ document.addEventListener('DOMContentLoaded',()=>{normalizeInactiveIds();refreshAdminHome();liveStats();});
+ document.addEventListener('click',e=>{if(e.target.closest('#librarianSystem'))setTimeout(liveStats,50);if(e.target.closest('#adminPanel'))setTimeout(refreshAdminHome,50);});
+})();
+</script>
+
+<style id="keep-admin-left-navigation-visible">
+/* Keep every Administrator navigation tab visible in the left sidebar, even while a section is open. */
+#adminPanel .admin-content,
+#adminPanel .admin-content.admin-section-mode {
+  display: grid !important;
+  grid-template-columns: 235px minmax(0, 1fr) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  width: 96% !important;
+  max-width: 1500px !important;
+  margin: 22px auto 55px !important;
+}
+#adminPanel .admin-content > .admin-menu,
+#adminPanel .admin-content.admin-section-mode > .admin-menu {
+  display: flex !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  position: sticky !important;
+  top: 14px !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: auto !important;
+  max-height: calc(100vh - 28px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+#adminPanel .admin-content > .admin-section,
+#adminPanel .admin-content > section,
+#adminPanel .admin-content.admin-section-mode > .admin-section,
+#adminPanel .admin-content.admin-section-mode > section {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+#adminPanel .admin-content.admin-section-mode > .admin-section.active,
+#adminPanel .admin-content.admin-section-mode > section.active {
+  display: block !important;
+}
+@media (max-width: 900px) {
+  #adminPanel .admin-content,
+  #adminPanel .admin-content.admin-section-mode {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #adminPanel .admin-content > .admin-menu,
+  #adminPanel .admin-content.admin-section-mode > .admin-menu {
+    display: flex !important;
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-height: none !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  #adminPanel .admin-content > .admin-section,
+  #adminPanel .admin-content > section,
+  #adminPanel .admin-content.admin-section-mode > .admin-section,
+  #adminPanel .admin-content.admin-section-mode > section {
+    width: 100% !important;
+  }
+}
+</style>
+
+<style id="mzugoss-librarian-nav-publisher-fixes">
+/* Librarian tabs sit flush to the right; there is no redundant Back tab. */
+#librarianSystem>nav{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:16px!important;flex-wrap:nowrap!important}
+#librarianSystem>nav>.brand{flex:0 0 auto!important;margin-right:0!important}
+#librarianSystem>nav>div:last-child{display:flex!important;flex:1 1 auto!important;min-width:0!important;margin-left:auto!important;justify-content:flex-end!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important}
+#librarianSystem>nav .librarian-back-home,#librarianSystem>nav .ui-back-button,#librarianSystem>nav button[data-nav-back="true"]{display:none!important}
+#mzugossLibrarianLiveStats{display:none!important}
+#adminDashboard #mzugossAdminLiveStats{display:flex}
+@media(max-width:850px){#librarianSystem>nav{flex-wrap:wrap!important}#librarianSystem>nav>div:last-child{width:100%;flex:1 1 100%;justify-content:flex-end!important;overflow-x:auto}}
+</style>
+<script id="mzugoss-latest-librarian-publisher-fixes">
+(function(){
+  const $=id=>document.getElementById(id);
+  const clean=v=>String(v==null?'':v).trim();
+  // Remove the redundant Back control added by earlier UI patches. The existing Home tab remains.
+  function cleanLibrarianNav(){
+    const nav=$('#librarianSystem')?.querySelector(':scope > nav'); if(!nav)return;
+    nav.querySelectorAll('.librarian-back-home,.ui-back-button,#adminReturnButton,button[data-nav-back="true"]').forEach(b=>b.remove());
+    nav.querySelectorAll('button').forEach(b=>{if(/^back(?:\s|$)/i.test(clean(b.textContent)))b.remove();});
+    const tabs=nav.querySelector(':scope > div:last-child');
+    if(tabs){tabs.style.marginLeft='auto';tabs.style.justifyContent='flex-end';}
+    $('#mzugossLibrarianLiveStats')?.remove();
+  }
+  // Keep the internal field name for compatibility with existing code, but present it as Publisher.
+  function setupPublisherField(){
+    const old=$('bookCategory'); if(!old)return;
+    const label=old.previousElementSibling;
+    if(label&&label.tagName==='LABEL')label.textContent='Publisher';
+    if(old.tagName==='SELECT'){
+      const input=document.createElement('input'); input.id='bookCategory';input.name='publisher';input.setAttribute('list','bookPublisherOptions');input.placeholder='Scan barcode or enter publisher (e.g. EXCELL, SUCCEED, JHANGO)';input.autocomplete='off';
+      old.replaceWith(input);
+      const dl=document.createElement('datalist');dl.id='bookPublisherOptions';
+      ['EXCELL','SUCCEED','EXCELL AND SUCCEED','ACHIEVER','ACHIEVERS','ARCHIEVER','ARCHIVER','JHANGO','CHANCO','TARGET','ARISE WITH','OTHER'].forEach(v=>{const o=document.createElement('option');o.value=v;dl.appendChild(o)});
+      input.insertAdjacentElement('afterend',dl);
+      input.addEventListener('input',()=>window.applyAutomaticShelfToForm?.());input.addEventListener('change',()=>window.applyAutomaticShelfToForm?.());
+    }else if(old.tagName==='INPUT'){
+      old.setAttribute('list','bookPublisherOptions');old.placeholder='Scan barcode or enter publisher (e.g. EXCELL, SUCCEED, JHANGO)';
+      if(!$('bookPublisherOptions')){const dl=document.createElement('datalist');dl.id='bookPublisherOptions';['EXCELL','SUCCEED','EXCELL AND SUCCEED','ACHIEVER','ACHIEVERS','ARCHIEVER','ARCHIVER','JHANGO','CHANCO','TARGET','ARISE WITH','OTHER'].forEach(v=>{const o=document.createElement('option');o.value=v;dl.appendChild(o)});old.insertAdjacentElement('afterend',dl);}
+    }
+  }
+  const publisherName=b=>clean(b.publisher||b.category||'OTHER').toUpperCase();
+  const forms=['Form 4','Form 3','Form 2','Form 1'];
+  function subjectDepartment(title){
+    const t=clean(title).toLowerCase();
+    if(/agri|computer|ict|technical|business|account|commerce|entrepreneur|design|technology|engineering|woodwork|metalwork|building|home economics|fashion|textile/.test(t))return 'Technical';
+    if(/science|biology|\bbio\b|chemistry|chemical|physics|mathematics|maths|algebra|geometry|agronomy|anatomy|physiology/.test(t))return 'Science';
+    if(/language|english|chichewa|french|literature|grammar|linguistics|communication|novel|poetry/.test(t))return 'Language';
+    if(/history|geography|humanities|social|civic|religious|religion|bible|christian|islam|life skills|development studies|government|politics|sociology|psychology/.test(t))return 'Humanities';
+    return 'Humanities';
+  }
+  window.calculateAutomaticShelf=function(book){
+    const title=clean(book.title||book.name);const dept=subjectDepartment(title);
+    const cls=clean(book.className||book.bookClass);const form=forms.includes(cls)?cls:'Not specified';
+    const pub=publisherName(book);const all=Array.isArray(window.books)?window.books:[];
+    const same=all.filter(b=>String(b.id)!==String(book.id)&&subjectDepartment(b.title||b.name)===dept&&clean(b.className||b.bookClass)===(form==='Not specified'?'':form)&&publisherName(b)===pub);
+    same.sort((a,b)=>clean(a.title||a.name).localeCompare(clean(b.title||b.name),undefined,{sensitivity:'base',numeric:true}));
+    let col=1;for(const b of same){if(clean(b.title||b.name).localeCompare(title,undefined,{sensitivity:'base',numeric:true})<0)col++;}
+    const level=form==='Not specified'?5:forms.indexOf(form)+1;
+    return {shelfNumber:dept+' Department Shelf',shelfSection:dept,shelfRow:(form==='Not specified'?'Form not specified':form)+' • '+(pub==='OTHER'?'Other Publisher':pub),shelfPosition:'Column '+String(col).padStart(2,'0'),shelfColumn:col,department:dept};
+  };
+  window.sortBooksByDepartmentAndForm=function(){
+    if(!Array.isArray(window.books))return;
+    window.books.sort((a,b)=>subjectDepartment(a.title||a.name).localeCompare(subjectDepartment(b.title||b.name))||clean(a.className||a.bookClass).localeCompare(clean(b.className||b.bookClass))||publisherName(a).localeCompare(publisherName(b))||clean(a.title||a.name).localeCompare(clean(b.title||b.name),undefined,{sensitivity:'base',numeric:true}));
+  };
+  const oldAdd=window.addBook;
+  if(typeof oldAdd==='function')window.addBook=function(){const chosenPublisher=clean($('bookCategory')?.value)||'OTHER';const before=Array.isArray(window.books)?window.books.length:0;const r=oldAdd.apply(this,arguments);if(Array.isArray(window.books)&&window.books.length>before){const b=window.books[window.books.length-1];b.publisher=chosenPublisher;b.category=chosenPublisher;Object.assign(b,window.calculateAutomaticShelf(b));if(typeof saveData==='function')saveData();if(typeof displayBooks==='function')displayBooks();}return r;};
+  // Publisher is accepted as the import column, while older Category headers remain compatible.
+  const oldImport=window.importBooksFromFile;
+  if(typeof oldImport==='function')window.importBooksFromFile=function(){return oldImport.apply(this,arguments);};
+  const oldScan=window.handleScannedBarcode;
+  window.handleScannedBarcode=function(code){
+    const purpose=(typeof scannerPurpose!=='undefined')?scannerPurpose:'';
+    if(purpose==='add'){
+      const upper=clean(code).toUpperCase();const map=[['EXCELL','EXCELL'],['EXCEL','EXCELL'],['SUCCEED','SUCCEED'],['SUCCEEDED','SUCCEED'],['ACHIEVER','ACHIEVER'],['ARCHIEVER','ARCHIEVER'],['ARCHIVER','ARCHIVER'],['JHANGO','JHANGO'],['CHANCO','CHANCO'],['TARGET','TARGET'],['ARISE','ARISE WITH']];
+      const found=map.find(([key])=>upper.includes(key));if(found&&$('bookCategory'))$('bookCategory').value=found[1];
+      if($('bookBarcode'))$('bookBarcode').value=clean(code);
+      if(typeof lookupBookByBarcode==='function')lookupBookByBarcode('add');window.applyAutomaticShelfToForm?.();return;
+    }
+    if(typeof oldScan==='function')return oldScan(code);
+  };
+  function init(){
+    cleanLibrarianNav();setupPublisherField();
+    // The three live summary cards are only injected on older builds; remove them from every librarian tab.
+    $('#mzugossLibrarianLiveStats')?.remove();
+    document.querySelectorAll('#librarianSystem .page #mzugossLibrarianLiveStats').forEach(n=>n.remove());
+    const help=document.querySelector('#bulkBooks .book-import-format-help');if(help)help.innerHTML='<strong>Required CSV columns:</strong> BookName,Publisher,Class<br><strong>Optional columns:</strong> Author,Barcode,Quantity<br><code>BookName,Publisher,Class,Author,Barcode,Quantity</code><br><code>Biology,EXCELL,Form 2,Jane Phiri,BC-002,3</code><br>The subject comes from the book name. Shelf columns are alphabetical by book/subject name; shelf rows are grouped by class and publisher. Barcode may be supplied or generated automatically.';
+    if(typeof window.refreshAllBookShelves==='function'&&Array.isArray(window.books)){window.refreshAllBookShelves();if(typeof saveData==='function')saveData();}
+    window.applyAutomaticShelfToForm?.();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  document.addEventListener('click',e=>{if(e.target.closest('#librarianSystem'))setTimeout(cleanLibrarianNav,0);});
+})();
+</script>
+
+<style id="mzugoss-current-request-fixes">
+/* Librarian navigation: keep tabs grouped on the right and show one clear Back to Dashboards button. */
+#librarianSystem>nav{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:14px!important;flex-wrap:nowrap!important}
+#librarianSystem>nav>.brand{flex:0 0 auto!important;margin-right:0!important}
+#librarianSystem>nav>div:last-of-type{display:flex!important;flex:1 1 auto!important;min-width:0!important;margin-left:auto!important;justify-content:flex-end!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important}
+#librarianSystem>nav .librarian-back-home{display:inline-flex!important;flex:0 0 auto!important;margin-left:10px!important;background:#fff!important;color:#17315d!important;border:1px solid #cbd5e1!important;border-radius:9px!important;padding:9px 13px!important;white-space:nowrap!important;cursor:pointer!important}
+#adminBookManagement .admin-book-list .delete-book-btn{background:#dc2626!important;color:#fff!important;border:0!important;border-radius:8px!important;padding:9px 13px!important;cursor:pointer!important}
+#adminBookManagement .admin-book-list .delete-book-btn:hover{background:#b91c1c!important}
+@media(max-width:850px){#librarianSystem>nav{flex-wrap:wrap!important}#librarianSystem>nav>div:last-of-type{width:100%;flex:1 1 100%;justify-content:flex-end!important;overflow-x:auto}}
+</style>
+<script id="mzugoss-final-user-request-fixes">
+(function(){
+  const byId=id=>document.getElementById(id);
+  const safe=v=>String(v==null?'':v);
+  const esc=v=>safe(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function refreshStudentViews(){
+    try{if(typeof saveData==='function')saveData();}catch(e){}
+    try{if(typeof updateStudentSuggestions==='function')updateStudentSuggestions();}catch(e){}
+    try{if(typeof displayAdminClasses==='function')displayAdminClasses();}catch(e){}
+    try{if(typeof displayDroppedStudents==='function')displayDroppedStudents();}catch(e){}
+    try{if(typeof showAlumniYears==='function')showAlumniYears();}catch(e){}
+    try{if(typeof updateAdminDashboard==='function')updateAdminDashboard();}catch(e){}
+    try{if(typeof refreshNextStudentNumber==='function')refreshNextStudentNumber();}catch(e){}
+    try{if(typeof renderAdminStudents==='function'){['Form 1','Form 2','Form 3','Form 4'].forEach(f=>{try{renderAdminStudents(f)}catch(e){}})}}catch(e){}
+  }
+  // Librarian: one Back to Dashboards button; keep it with the right-aligned navigation tabs.
+  function setupLibrarianBack(){
+    const nav=document.querySelector('#librarianSystem > nav');if(!nav)return;
+    nav.querySelectorAll('.librarian-back-home,.ui-back-button,#adminReturnButton,button[data-nav-back="true"]').forEach(b=>b.remove());
+    const groups=Array.from(nav.children).filter(n=>n.tagName==='DIV'&&!n.classList.contains('brand'));
+    const tabs=groups[groups.length-1]||nav;
+    const back=document.createElement('button');back.type='button';back.className='librarian-back-home';back.innerHTML='← <span>Back to Dashboards</span>';
+    back.addEventListener('click',()=>{if(typeof window.backToDashboards==='function')window.backToDashboards();});
+    tabs.appendChild(back);
+    tabs.style.marginLeft='auto';tabs.style.justifyContent='flex-end';
+  }
+  // Remove the requested statistics from the Librarian Home tab only, not from Administrator dashboards.
+  function cleanLibrarianHome(){
+    const home=byId('home');if(!home)return;
+    home.querySelectorAll('*').forEach(el=>{
+      if(el.children.length>0)return;
+      const t=(el.textContent||'').trim().toLowerCase();
+      if(['available book copies','books currently borrowed','students currently borrowing','active students'].includes(t)){
+        const card=el.closest('.stat-card,.stat,.dashboard-card,.metric-card,.summary-card,.card,.statistic')||el.parentElement;
+        if(card&&home.contains(card))card.remove();
+      }
+    });
+    // Also remove older injected summary rows if present inside the Home page.
+    home.querySelectorAll('#mzugossLibrarianLiveStats,.mzugoss-live-stats').forEach(n=>n.remove());
+  }
+  // Ensure Manage Books always shows every registered title with a red delete action.
+  window.renderAdminBookManagement=function(){
+    const section=byId('adminBookManagement');if(!section)return;
+    let list=section.querySelector('.admin-book-list');
+    if(!list){list=document.createElement('div');list.className='admin-book-list books';section.appendChild(list);}
+    const all=Array.isArray(books)?books:[];
+    if(!all.length){list.innerHTML='<p>No books have been registered yet.</p>';return;}
+    list.innerHTML='';
+    all.slice().sort((a,b)=>safe(a.title||a.name).localeCompare(safe(b.title||b.name),undefined,{sensitivity:'base',numeric:true})).forEach(book=>{
+      const card=document.createElement('article');card.className='book book-card';
+      const title=document.createElement('h3');title.textContent=book.title||book.name||'Untitled book';card.appendChild(title);
+      const details=document.createElement('p');details.textContent='Author: '+(book.author||'Not recorded')+' · Publisher: '+(book.publisher||book.category||'Not recorded')+' · Class: '+(book.className||book.bookClass||'Not recorded')+' · Barcode: '+(book.barcode||'Not recorded')+' · Quantity: '+(book.quantity??book.available??0);card.appendChild(details);
+      const del=document.createElement('button');del.type='button';del.className='delete-book-btn';del.textContent='Delete Book';del.addEventListener('click',()=>{if(typeof window.deleteBook==='function')window.deleteBook(book.id);setTimeout(()=>window.renderAdminBookManagement(),0);});card.appendChild(del);list.appendChild(card);
+    });
+  };
+  const priorShow=window.showAdminSection;
+  if(typeof priorShow==='function')window.showAdminSection=function(id){const result=priorShow.apply(this,arguments);if(id==='adminBookManagement')setTimeout(()=>window.renderAdminBookManagement(),0);return result;};
+  // Dropping a student records the start/end years, removes the student from the active class,
+  // places them in Dropped Students immediately, and releases their active ID for reuse.
+  window.dropActiveStudent=function(id){
+    if(!Array.isArray(students)||!Array.isArray(droppedStudents))return;
+    const index=students.findIndex(s=>String(s.id)===String(id)||String(s.libraryId)===String(id));if(index<0)return;
+    const student=students[index];
+    if(!confirm('Move '+(student.name||'this student')+' to Dropped Students? They will be removed from the active class and cannot borrow books.'))return;
+    let startYear=student.startYear||student.yearStarted||'';
+    if(!startYear){startYear=prompt('Enter the year this student started school (e.g. 2023):','');if(!startYear||!/^\d{4}$/.test(String(startYear).trim())){alert('Enter a valid four-digit start year.');return;}}
+    const goneYear=prompt('Enter the year the student dropped / left school:',String(new Date().getFullYear()));
+    if(!goneYear||!/^\d{4}$/.test(String(goneYear).trim())){alert('Enter a valid four-digit year gone.');return;}
+    const record={...student,startYear:Number(startYear),yearStarted:Number(startYear),goneYear:Number(goneYear),status:'Dropped',reason:student.reason||'Dropped from school',droppedAt:new Date().toISOString()};
+    if(!record.formerLibraryId)record.formerLibraryId=record.libraryId||'';
+    record.libraryId='';
+    if(!droppedStudents.some(s=>(s.formerLibraryId||s.libraryId)===(record.formerLibraryId||'')))droppedStudents.unshift(record);
+    students.splice(index,1);
+    refreshStudentViews();
+    if(typeof window.showToast==='function')window.showToast((student.name||'Student')+' moved to Dropped Students','var(--red)');
+  };
+  // Archive Form 4 students directly into Alumni and refresh the Alumni years/cards without a page reload.
+  window.archiveStudentsToAlumni=function(items,goneYear){
+    if(!Array.isArray(students)||!Array.isArray(alumniStudents))return;
+    const selected=(Array.isArray(items)?items:[items]).filter(Boolean);
+    const yr=goneYear||prompt('Enter the year the student completed school: ',String(new Date().getFullYear()));
+    if(!yr||!/^\d{4}$/.test(String(yr).trim())){alert('Enter a valid four-digit year gone.');return;}
+    selected.forEach(item=>{
+      const live=students.find(s=>String(s.id)===String(item.id)||String(s.libraryId)===String(item.libraryId)||s===item)||item;
+      const startYear=live.startYear||live.yearStarted||prompt('Enter the year '+(live.name||'this student')+' started school:','');
+      if(!startYear||!/^\d{4}$/.test(String(startYear).trim()))return;
+      const formerId=live.formerLibraryId||live.libraryId||item.formerLibraryId||item.libraryId||'';
+      const record={...live,startYear:Number(startYear),yearStarted:Number(startYear),goneYear:Number(yr),status:'Alumni',formerLibraryId:formerId,libraryId:'',archivedAt:new Date().toISOString()};
+      const existing=alumniStudents.findIndex(a=>(a.formerLibraryId||a.libraryId)===formerId&&formerId);
+      if(existing>=0)alumniStudents[existing]={...alumniStudents[existing],...record};else alumniStudents.unshift(record);
+      students=students.filter(s=>!(String(s.id)===String(live.id)||String(s.libraryId)===String(live.libraryId)));
+    });
+    refreshStudentViews();
+  };
+  function init(){
+    setupLibrarianBack();cleanLibrarianHome();
+    if(byId('adminBookManagement'))window.renderAdminBookManagement();
+    // Repaint after stored data has loaded and after a tab is clicked.
+    refreshStudentViews();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  document.addEventListener('click',e=>{
+    if(e.target.closest('#librarianSystem')){setTimeout(setupLibrarianBack,0);setTimeout(cleanLibrarianHome,0);}
+    if(e.target.closest('#adminPanel'))setTimeout(()=>{cleanLibrarianHome();if(byId('adminBookManagement')&&byId('adminBookManagement').classList.contains('active'))window.renderAdminBookManagement();},50);
+  });
+})();
+</script>
+
+<!-- Final corrections: permanent catalogue deletion, reliable Form 4 archiving, promotion and ID reuse -->
+<style>
+#adminBookManagement .delete-book-btn,#adminBookManagement button[onclick*="deleteBook"]{background:#dc2626!important;color:#fff!important;border:0!important;border-radius:8px!important;padding:9px 13px!important;font-weight:700!important;cursor:pointer!important}
+#adminBookManagement .delete-book-btn:hover,#adminBookManagement button[onclick*="deleteBook"]:hover{background:#b91c1c!important}
+</style>
+<script id="mzugoss-final-delete-archive-promotion-fix">
+(function(){
+  const byId=id=>document.getElementById(id);
+  const clean=v=>String(v==null?'':v).trim();
+  const escapeText=v=>clean(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function persist(){try{if(typeof saveData==='function')saveData();}catch(e){console.error(e);}}
+  function refreshBooks(){
+    persist();
+    try{if(typeof displayBooks==='function')displayBooks();}catch(e){}
+    try{if(typeof updateStats==='function')updateStats();}catch(e){}
+    try{if(typeof updateAdminDashboard==='function')updateAdminDashboard();}catch(e){}
+    try{if(typeof window.renderAdminBookManagement==='function')window.renderAdminBookManagement();}catch(e){}
+    try{document.dispatchEvent(new CustomEvent('mzugoss:books-changed'));}catch(e){}
+  }
+  // Delete from the actual shared catalogue, not only from the Manage Books display.
+  window.deleteBook=function(id){
+    if(!Array.isArray(books))return;
+    const book=books.find(b=>String(b.id)===String(id));
+    if(!book){refreshBooks();return;}
+    const isBorrowed=Array.isArray(borrowed)&&borrowed.some(r=>!r.returned&&String(r.bookId)===String(book.id));
+    if(isBorrowed){alert('This book cannot be deleted while a copy is still borrowed. Return the book first.');return;}
+    if(!confirm('Permanently delete “'+(book.title||book.name||'this book')+'” from the school library catalogue?'))return;
+    books=books.filter(b=>String(b.id)!==String(book.id));
+    refreshBooks();
+    if(typeof showToast==='function')showToast('Book deleted from the library catalogue','var(--red)');
+  };
+  // Keep the ID available for a new active student, while preserving the old one in formerLibraryId.
+  function releaseId(record){
+    if(!record)return;
+    const old=clean(record.formerLibraryId||record.libraryId);
+    if(old)record.formerLibraryId=old;
+    record.libraryId='';
+  }
+  window.getNextStudentNumber=function(){
+    const used=new Set((Array.isArray(students)?students:[]).map(s=>clean(s.libraryId).toUpperCase()).filter(Boolean));
+    let n=1, candidate='';
+    do{candidate='MGZ/'+String(n).padStart(4,'0');n++;}while(used.has(candidate));
+    return candidate;
+  };
+  try{getNextStudentNumber=window.getNextStudentNumber;}catch(e){}
+  function refreshStudents(){
+    persist();
+    try{if(typeof updateStudentSuggestions==='function')updateStudentSuggestions();}catch(e){}
+    try{if(typeof displayAdminClasses==='function')displayAdminClasses();}catch(e){}
+    try{if(typeof displayDroppedStudents==='function')displayDroppedStudents();}catch(e){}
+    try{if(typeof showAlumniYears==='function')showAlumniYears();}catch(e){}
+    try{if(typeof updateAdminDashboard==='function')updateAdminDashboard();}catch(e){}
+    try{if(typeof refreshNextStudentNumber==='function')refreshNextStudentNumber();}catch(e){}
+    try{if(byId('adminClassDashboard'))byId('adminClassDashboard').style.display='grid';if(byId('adminClassStudents'))byId('adminClassStudents').style.display='none';}catch(e){}
+  }
+  // Normalize class names and make archive atomic: every selected Form 4 student moves to Alumni.
+  window.archiveStudentsToAlumni=function(items,goneYear){
+    if(!Array.isArray(students)||!Array.isArray(alumniStudents))return;
+    const selected=(Array.isArray(items)?items:[items]).filter(Boolean);
+    if(!selected.length){alert('Select at least one Form 4 student to archive.');return;}
+    const yr=clean(goneYear)||clean(prompt('Enter the year these students completed school:',String(new Date().getFullYear())));
+    if(!/^\d{4}$/.test(yr)){alert('Enter a valid four-digit completion year.');return;}
+    const records=[];
+    for(const item of selected){
+      const live=students.find(s=>String(s.id)===String(item.id)||String(s.libraryId)===String(item.libraryId))||item;
+      const form=clean(live.form||live.formName).toLowerCase().replace(/\s+/g,' ');
+      if(form!=='form 4'){continue;}
+      let start=clean(live.startYear||live.yearStarted);
+      if(!/^\d{4}$/.test(start))start=clean(prompt('Enter the year '+(live.name||'this student')+' started school:',''));
+      if(!/^\d{4}$/.test(start)){alert('Archiving cancelled: enter a valid start year for '+(live.name||'the student')+'.');return;}
+      const formerId=clean(live.formerLibraryId||live.libraryId||item.formerLibraryId||item.libraryId);
+      const record={...live,startYear:Number(start),yearStarted:Number(start),goneYear:Number(yr),yearGone:Number(yr),status:'Alumni',formerLibraryId:formerId,libraryId:'',archivedAt:new Date().toISOString()};
+      const index=alumniStudents.findIndex(a=>formerId&&clean(a.formerLibraryId||a.libraryId)===formerId);
+      if(index>=0)alumniStudents[index]={...alumniStudents[index],...record};else alumniStudents.unshift(record);
+      records.push(live);
+    }
+    if(!records.length){alert('Only active Form 4 students can be archived to Alumni.');return;}
+    const movedIds=new Set(records.map(s=>String(s.id)));
+    const movedLibraryIds=new Set(records.map(s=>clean(s.libraryId)).filter(Boolean));
+    students=students.filter(s=>!movedIds.has(String(s.id))&&!movedLibraryIds.has(clean(s.libraryId)));
+    refreshStudents();
+    if(typeof showToast==='function')showToast(records.length+' student(s) moved to Alumni','var(--purple)');
+    // Once all Form 4 students have left for Alumni, promote the remaining active classes immediately.
+    const remainingForm4=students.some(s=>clean(s.form||s.formName).toLowerCase()==='form 4');
+    if(!remainingForm4){
+      const counts={f1:0,f2:0,f3:0};
+      students.forEach(s=>{const f=clean(s.form||s.formName).toLowerCase();if(f==='form 1')counts.f1++;if(f==='form 2')counts.f2++;if(f==='form 3')counts.f3++;});
+      students=students.map(s=>{const f=clean(s.form||s.formName).toLowerCase();if(f==='form 1')return {...s,form:'Form 2',formName:'Form 2'};if(f==='form 2')return {...s,form:'Form 3',formName:'Form 3'};if(f==='form 3')return {...s,form:'Form 4',formName:'Form 4'};return s;});
+      refreshStudents();
+      if(typeof showToast==='function')showToast('Promotion complete: Form 1 → 2, Form 2 → 3, Form 3 → 4','var(--green)');
+    }
+  };
+  // Dropped students are excluded from active classes and can never borrow or request books.
+  const previousDrop=window.dropActiveStudent;
+  window.dropActiveStudent=function(id){
+    if(!Array.isArray(students)||!Array.isArray(droppedStudents))return;
+    const index=students.findIndex(s=>String(s.id)===String(id)||String(s.libraryId)===String(id));if(index<0)return;
+    const live=students[index];
+    if(!confirm('Move '+(live.name||'this student')+' to Dropped Students? They will no longer be able to borrow books.'))return;
+    let start=clean(live.startYear||live.yearStarted);if(!/^\d{4}$/.test(start))start=clean(prompt('Enter the year this student started school:',''));
+    if(!/^\d{4}$/.test(start)){alert('Enter a valid start year.');return;}
+    const gone=clean(prompt('Enter the year the student dropped / left school:',String(new Date().getFullYear())));
+    if(!/^\d{4}$/.test(gone)){alert('Enter a valid year gone.');return;}
+    const record={...live,startYear:Number(start),yearStarted:Number(start),goneYear:Number(gone),yearGone:Number(gone),status:'Dropped',reason:live.reason||'Dropped from school',formerLibraryId:clean(live.formerLibraryId||live.libraryId),libraryId:'',droppedAt:new Date().toISOString()};
+    droppedStudents.unshift(record);students.splice(index,1);refreshStudents();
+  };
+  // Defensive checks even if the login/request functions are invoked from another UI path.
+  function isInactiveStudent(st){
+    if(!st)return false;
+    // Active account wins if an old dropped/alumni ID has been legitimately reassigned.
+    const active=Array.isArray(students)&&students.some(s=>
+      (st.id!=null&&String(s.id)===String(st.id)) ||
+      (clean(st.libraryId)&&clean(s.libraryId).toUpperCase()===clean(st.libraryId).toUpperCase())
+    );
+    if(active)return false;
+    return true;
+  }
+  const oldRequest=window.sendBorrowRequest;
+  window.sendBorrowRequest=function(){if(typeof loggedInStudent!=='undefined'&&isInactiveStudent(loggedInStudent)){alert('Dropped students and Alumni cannot request or borrow books.');return;}if(typeof oldRequest==='function')return oldRequest.apply(this,arguments);};
+  const oldBorrow=window.borrowBook;
+  window.borrowBook=function(){if(typeof loggedInStudent!=='undefined'&&isInactiveStudent(loggedInStudent)){alert('Dropped students and Alumni cannot borrow books.');return;}if(typeof oldBorrow==='function')return oldBorrow.apply(this,arguments);};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{refreshBooks();refreshStudents();});
+  else {setTimeout(refreshBooks,0);setTimeout(refreshStudents,0);}
+})();
+</script>
+
+<!-- Final update: Alumni book history and role-aware Admin Panel return tab -->
+<style id="alumni-history-admin-return-style">
+#librarianSystem nav {display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;}
+#librarianSystem nav > div:last-child {display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;margin-left:auto!important;}
+#librarianSystem #adminReturnButton {background:#176b45!important;color:#fff!important;border:0!important;border-radius:9px!important;padding:10px 14px!important;font-weight:700!important;cursor:pointer!important;white-space:nowrap!important;}
+#alumniNotReturnedList table,#alumniReturnedList table {width:100%;border-collapse:collapse;}
+#alumniNotReturnedList th,#alumniNotReturnedList td,#alumniReturnedList th,#alumniReturnedList td {padding:9px 10px;border-bottom:1px solid #e3e8ef;text-align:left;}
+@media(max-width:760px){#librarianSystem nav{flex-wrap:wrap!important}#librarianSystem nav>div:last-child{width:100%;justify-content:flex-end!important;flex-wrap:wrap!important}}
+</style>
+<script id="alumni-history-admin-return-fix">
+(function(){
+  const $ = id => document.getElementById(id);
+  const clean = value => String(value == null ? '' : value).trim();
+  const esc = value => clean(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const getArray = name => { try { return (typeof window[name] !== 'undefined' && Array.isArray(window[name])) ? window[name] : (typeof eval(name) !== 'undefined' && Array.isArray(eval(name)) ? eval(name) : []); } catch(e) { try { return eval(name); } catch(_) { return []; } } };
+  function alumniIdSet(list){
+    const ids=new Set(); const names=new Set();
+    list.forEach(s=>{[s.formerLibraryId,s.libraryId,s.studentId].forEach(id=>{const v=clean(id).toUpperCase();if(v)ids.add(v)});const n=clean(s.name||s.studentName).toLowerCase();if(n)names.add(n)});
+    return {ids,names};
+  }
+  function recordBelongs(record, index){
+    const ids=index.ids;
+    const names=index.names;
+    const recordIds=[record.studentId,record.libraryId,record.formerLibraryId].map(v=>clean(v).toUpperCase()).filter(Boolean);
+    if(recordIds.some(id=>ids.has(id)))return true;
+    const name=clean(record.studentName||record.name).toLowerCase();
+    return !!name && names.has(name);
+  }
+  // Show book-level history under the selected start/end-year Alumni group.
+  window.displayAlumniBookRecords=function(tab){
+    const returned=tab==='returned';
+    const container=$(returned?'alumniReturnedList':'alumniNotReturnedList');
+    const search=clean($(returned?'alumniReturnedSearch':'alumniNotReturnedSearch')?.value).toLowerCase();
+    if(!container)return;
+    const selected=typeof getAlumniStudentsForSelectedRange==='function'?getAlumniStudentsForSelectedRange():[];
+    const index=alumniIdSet(selected);
+    const pool=returned?getArray('returnedArchive'):getArray('borrowed');
+    const records=pool.filter(r=>{
+      if(returned ? !r.returned : !!r.returned)return false;
+      if(!recordBelongs(r,index))return false;
+      const text=[r.studentName,r.studentId,r.bookTitle,r.bookNumber,r.printedBookNumber,r.bookBarcode,r.bookAuthor].map(clean).join(' ').toLowerCase();
+      return text.includes(search);
+    });
+    if(!records.length){
+      container.innerHTML='<p>'+(returned?'No returned-book records found for alumni in this year group.':'No unreturned-book records found for alumni in this year group.')+'</p>';
+      return;
+    }
+    container.innerHTML='<div class="table-container"><table><thead><tr><th>Student Name</th><th>Former Library ID</th><th>Year Started</th><th>Year Completed</th><th>Book Number</th><th>Book Title</th><th>Author</th><th>Borrow Date</th><th>'+(returned?'Return Date':'Due Date')+'</th><th>Status</th></tr></thead><tbody>'+records.map(r=>{
+      const student=selected.find(s=>recordBelongs(r,alumniIdSet([s])))||{};
+      const id=clean(r.studentId||r.formerLibraryId||student.formerLibraryId||student.libraryId);
+      const bookNo=clean(r.printedBookNumber||r.bookNumber||r.bookBarcode||'');
+      const finalDate=returned?clean(r.returnDate||''):clean(r.dueDate||'');
+      const overdue=!returned&&r.dueDate&&r.dueDate<new Date().toISOString().slice(0,10);
+      return '<tr'+(overdue?' style="background:#fff1f1;color:#9f1239"':'')+'><td>'+esc(r.studentName||student.name||'')+'</td><td>'+esc(id)+'</td><td>'+esc(student.startYear||student.yearStarted||'Not recorded')+'</td><td>'+esc(student.goneYear||student.yearGone||'Not recorded')+'</td><td>'+esc(bookNo)+'</td><td>'+esc(r.bookTitle||r.title||'')+'</td><td>'+esc(r.bookAuthor||r.author||'')+'</td><td>'+esc(r.borrowDate||'')+'</td><td>'+esc(finalDate)+'</td><td>'+(returned?'Returned':(overdue?'Overdue — not returned':'Not returned'))+'</td></tr>';
+    }).join('')+'</tbody></table></div>';
+  };
+  // Preserve the user's role when entering the librarian view from the Administrator menu.
+  function ensureAdminReturnButton(){
+    const nav=$('#librarianSystem nav'); if(!nav)return;
+    const shouldShow=sessionStorage.getItem('mzugossRole')==='admin' && sessionStorage.getItem('mzugossLibrarianOpenedByAdmin')==='1';
+    let button=$('adminReturnButton');
+    if(!shouldShow){if(button)button.remove();return;}
+    if(!button){
+      const target=nav.querySelector(':scope > div:last-child')||nav;
+      button=document.createElement('button');button.type='button';button.id='adminReturnButton';button.textContent='Admin Panel';
+      button.onclick=function(){
+        if(sessionStorage.getItem('mzugossRole')!=='admin')return;
+        sessionStorage.removeItem('mzugossLibrarianOpenedByAdmin');
+        if(typeof window.openAdminFromLibrarian==='function')window.openAdminFromLibrarian();
+        else {const lib=$('librarianSystem'),admin=$('adminPanel');if(lib)lib.style.display='none';if(admin)admin.style.display='block';}
+        button.remove();
+      };
+      target.appendChild(button);
+    }
+    button.style.display='inline-flex';
+  }
+  const originalOpenFromAdmin=window.openLibrarianFromAdmin;
+  if(typeof originalOpenFromAdmin==='function')window.openLibrarianFromAdmin=function(){
+    if(sessionStorage.getItem('mzugossRole')!=='admin' && typeof activeRole!=='undefined' && activeRole!=='admin'){alert('Only an Administrator can open the Librarian Panel from the Administrator menu.');return;}
+    sessionStorage.setItem('mzugossRole','admin');sessionStorage.setItem('mzugossLibrarianOpenedByAdmin','1');
+    const result=originalOpenFromAdmin.apply(this,arguments);setTimeout(ensureAdminReturnButton,0);return result;
+  };
+  const originalOpenLibrarian=window.openLibrarian;
+  if(typeof originalOpenLibrarian==='function')window.openLibrarian=function(){
+    // A genuine Librarian login must never inherit the Administrator return tab.
+    if(sessionStorage.getItem('mzugossRole')!=='admin')sessionStorage.removeItem('mzugossLibrarianOpenedByAdmin');
+    const result=originalOpenLibrarian.apply(this,arguments);setTimeout(ensureAdminReturnButton,0);return result;
+  };
+  document.addEventListener('DOMContentLoaded',function(){
+    ensureAdminReturnButton();
+    if(typeof window.showAlumniYears==='function')window.showAlumniYears();
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('#librarianSystem'))setTimeout(ensureAdminReturnButton,0);
+    if(e.target.closest('#adminPanel')&&e.target.closest('[data-section="alumniStudents"]'))setTimeout(()=>{if(typeof window.showAlumniYears==='function')window.showAlumniYears();},0);
+  });
+})();
+</script>
+
+
+<!-- SUPABASE CLIENT CONFIGURATION (no visible connection panel) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const MZUGOSS_SUPABASE_URL = 'https://kzjijmsbeaozrdfcinaf.supabase.co';
+const MZUGOSS_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_Z_YOgKrJqRg-tZvCxtJhCg_m7Ym3Ksr';
+let mzugossSupabaseClient = null;
+try { if (window.supabase && window.supabase.createClient) mzugossSupabaseClient = window.supabase.createClient(MZUGOSS_SUPABASE_URL, MZUGOSS_SUPABASE_PUBLISHABLE_KEY); }
+catch (e) { console.error('Supabase client initialization failed:', e); }
+</script>
+<!-- IMPORTANT: the app's existing login and saveData() are still localStorage-based.
+     This connection test does not yet migrate book/student/request/borrowing CRUD to cloud. -->
+
+
+<!-- Final requested corrections: Alumni All Students tab, Form 4 archive-only controls, and install guidance -->
+<style id="mzugoss-final-alumni-install-style">
+ #alumniAllStudentsPanel{background:#fff;border:1px solid #dbe5df;border-radius:12px;padding:14px;margin:12px 0;color:#18352a}
+ #alumniAllStudentsPanel table{width:100%;border-collapse:collapse;min-width:540px}
+ #alumniAllStudentsPanel th,#alumniAllStudentsPanel td{padding:9px 10px;border-bottom:1px solid #e2e8e4;text-align:left}
+ #alumniAllStudentsPanel .alumni-table-wrap{overflow-x:auto}
+ .mzugoss-install-help{margin:16px 0;padding:12px 14px;border:1px solid #cfe2d8;border-radius:12px;background:#f5fbf7;color:#18352a}
+ @media(max-width:640px){#alumniAllStudentsPanel{padding:9px}.mzugoss-install-help{font-size:14px}}
+</style>
+<script id="mzugoss-final-alumni-install-script">
+(function(){
+ 'use strict';
+ const $=id=>document.getElementById(id);
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ // Completely remove the connection-test overlay; keep the configured Supabase client/key in code.
+ function removeConnectionPanel(){ $('supabaseConnectionCard')?.remove(); }
+ // Form 4 must be archived, never deleted/dropped. Hide individual and bulk delete controls while viewing Form 4.
+ function correctForm4Controls(){
+   const heading=$('adminSelectedClass');
+   const isF4=!!heading && heading.textContent.replace(' Students','').trim()==='Form 4';
+   const host=$('adminStudentsInClass');
+   document.querySelectorAll('#adminStudentsInClass button, #adminStudentsInClass input').forEach(el=>{
+     const label=(el.textContent||el.value||'').trim().toLowerCase();
+     if(isF4 && (label.includes('delete') || label.includes('drop'))){ el.style.display='none'; }
+   });
+   document.querySelectorAll('button[onclick*="deleteSelectedStudents"]').forEach(el=>{el.style.display=isF4?'none':'';});
+   document.querySelectorAll('button[onclick*="archiveAllForm4Students"]').forEach(el=>{el.style.display=isF4?'inline-flex':'none';el.textContent='Archive All Form 4 to Alumni';});
+ }
+ // Alumni year detail gets an All Students tab alongside the returned/unreturned book-history tabs.
+ function ensureAllStudentsPanel(){
+   const view=$('alumniStudentView'); if(!view || $('alumniAllStudentsPanel'))return;
+   const tabs=view.querySelector('.alumni-tabs'); if(!tabs)return;
+   const btn=document.createElement('button');btn.type='button';btn.className='alumni-tab';btn.id='alumniAllStudentsTab';btn.textContent='All Students';
+   btn.addEventListener('click',()=>showAllAlumniStudents());
+   tabs.insertBefore(btn,tabs.firstChild);
+   const panel=document.createElement('div');panel.id='alumniAllStudentsPanel';panel.style.display='none';
+   panel.innerHTML='<h3>All Students in This Alumni Year</h3><div class="search-box"><input id="alumniAllStudentsSearch" placeholder="Search alumni students..." aria-label="Search alumni students"><button type="button" id="alumniAllStudentsSearchBtn">Search</button></div><div id="alumniAllStudentsList"></div>';
+   tabs.insertAdjacentElement('afterend',panel);
+   $('alumniAllStudentsSearch').addEventListener('input',renderAllAlumniStudents);
+   $('alumniAllStudentsSearchBtn').addEventListener('click',renderAllAlumniStudents);
+ }
+ function renderAllAlumniStudents(){
+   const box=$('alumniAllStudentsList'); if(!box)return;
+   const selected=typeof getAlumniStudentsForSelectedRange==='function'?getAlumniStudentsForSelectedRange():[];
+   const q=($('alumniAllStudentsSearch')?.value||'').toLowerCase().trim();
+   const rows=selected.filter(st=>`${st.name||st.full_name||''} ${st.formerLibraryId||st.libraryId||''} ${st.form||st.formName||''}`.toLowerCase().includes(q));
+   box.innerHTML=rows.length?'<div class="alumni-table-wrap"><table><thead><tr><th>Student Name</th><th>Former Library ID</th><th>Class</th><th>Year Started</th><th>Year Completed</th></tr></thead><tbody>'+rows.map(st=>'<tr><td>'+esc(st.name||st.full_name||'Not recorded')+'</td><td>'+esc(st.formerLibraryId||st.libraryId||'Not recorded')+'</td><td>'+esc(st.form||st.formName||'Form 4')+'</td><td>'+esc(st.startYear||st.yearStarted||'Not recorded')+'</td><td>'+esc(st.goneYear||st.yearGone||'Not recorded')+'</td></tr>').join('')+'</tbody></table></div>':'<p>No students match this search in the selected Alumni year.</p>';
+ }
+ function showAllAlumniStudents(){
+   ensureAllStudentsPanel();
+   ['alumniNotReturnedPanel','alumniReturnedPanel'].forEach(id=>{if($(id))$(id).style.display='none';});
+   if($('alumniAllStudentsPanel'))$('alumniAllStudentsPanel').style.display='block';
+   document.querySelectorAll('#alumniStudentView .alumni-tab').forEach(b=>b.classList.toggle('active',b.id==='alumniAllStudentsTab'));
+   renderAllAlumniStudents();
+ }
+ const oldOpen=window.openAlumniYear;
+ if(typeof oldOpen==='function')window.openAlumniYear=function(range){oldOpen.apply(this,arguments);ensureAllStudentsPanel();showAllAlumniStudents();};
+ const oldShowTab=window.showAlumniBookTab;
+ if(typeof oldShowTab==='function')window.showAlumniBookTab=function(tab){if($('alumniAllStudentsPanel'))$('alumniAllStudentsPanel').style.display='none';if($('alumniAllStudentsTab'))$('alumniAllStudentsTab').classList.remove('active');return oldShowTab.apply(this,arguments);};
+ const oldYears=window.showAlumniYears;
+ if(typeof oldYears==='function')window.showAlumniYears=function(){if($('alumniAllStudentsPanel'))$('alumniAllStudentsPanel').style.display='none';return oldYears.apply(this,arguments);};
+ // Re-apply controls after class lists render dynamically.
+ const observer=new MutationObserver(()=>{removeConnectionPanel();correctForm4Controls();ensureAllStudentsPanel();});
+ document.addEventListener('DOMContentLoaded',()=>{removeConnectionPanel();correctForm4Controls();ensureAllStudentsPanel();});
+ observer.observe(document.documentElement,{childList:true,subtree:true});
+ document.addEventListener('click',()=>setTimeout(()=>{removeConnectionPanel();correctForm4Controls();ensureAllStudentsPanel();},80));
+ // Add installation instructions: browsers can install a hosted PWA; a file opened directly is not installable as a PWA.
+ function addInstallHelp(){
+   if($('mzugossInstallHelp'))return;
+   const target=$('loginScreen')||document.body; if(!target)return;
+   const box=document.createElement('div');box.className='mzugoss-install-help';box.id='mzugossInstallHelp';
+   box.innerHTML='<strong>Use MZUGOSS on your phone or computer</strong><p>For an installable app icon and reliable offline opening, the school must publish the app over HTTPS. Open the hosted app in Chrome or Edge, then choose <em>Install app</em> or <em>Add to Home screen</em>. This downloaded HTML file can also be opened directly, but direct-file mode does not support full PWA installation or offline caching.</p>';
+   target.appendChild(box);
+ }
+ window.addEventListener('load',()=>{removeConnectionPanel();correctForm4Controls();ensureAllStudentsPanel();addInstallHelp();});
+})();
+</script>
+
+<script>if (location.protocol === "https:" && "serviceWorker" in navigator) { window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(err=>console.warn("PWA service worker registration failed",err))); }</script>
+<!-- MZUGOSS CLOUD DATA ADAPTER v1: uses Supabase only when a valid Auth session exists -->
+<script id="mzugoss-cloud-data-adapter">
+(function(){
+ 'use strict';
+ const client = window.mzugossSupabaseClient;
+ if(!client){ console.error('MZUGOSS: Supabase client unavailable.'); return; }
+ const SYNC_KEY='mzugossCloudSyncLastResult';
+ const uuid=()=>{ if(window.crypto&&crypto.randomUUID)return crypto.randomUUID(); return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16);}); };
+ const validUuid=v=>typeof v==='string'&&/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v);
+ const getId=(obj)=>{if(!obj._cloudId||!validUuid(obj._cloudId))obj._cloudId=uuid();return obj._cloudId;};
+ const str=(v)=>v==null?'':String(v);
+ const asNum=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
+ function role(){return String(sessionStorage.getItem('mzugossRole')||activeRole||'').toLowerCase();}
+ function notify(msg){ try{ if(typeof window.showToast==='function')window.showToast(msg,'#24764b'); else console.info('MZUGOSS Cloud:',msg); }catch(_){console.info(msg);} }
+ async function requireSession(){const {data,error}=await client.auth.getSession();if(error)throw error;if(!data.session)throw new Error('No Supabase Auth session. Create/sign in to a Supabase Auth account before syncing. The app’s legacy local login does not create a cloud session.');return data.session;}
+ // The school must provision Supabase Auth accounts and profiles before these methods can succeed.
+ window.mzugossCloudSignIn=async function(email,password){const {data,error}=await client.auth.signInWithPassword({email:String(email||'').trim(),password:String(password||'')});if(error)throw error;notify('Cloud sign-in successful. You can now sync permitted records.');return data;};
+ window.mzugossCloudSignOut=async function(){const {error}=await client.auth.signOut();if(error)throw error;notify('Signed out of cloud account.');};
+ async function pushBooks(){
+  const rows=(Array.isArray(window.books)?window.books:[]).map(b=>({id:getId(b),title:str(b.title||b.name),author:str(b.author),publisher:str(b.publisher||b.category),subject:str(b.subject||b.category),class_name:str(b.className||b.class_name||b.bookClass),department:str(b.department),shelf_level:str(b.shelfLevel||b.shelf_level),shelf_row:str(b.shelfRow||b.shelf_row),shelf_column:str(b.shelfColumn||b.shelf_column),shelf_number:str(b.shelfNumber||b.shelf_number),shelf_section:str(b.shelfSection||b.shelf_section),shelf_position:str(b.shelfPosition||b.shelf_position),barcode:str(b.barcode),book_number:str(b.bookNumber||b.book_number),quantity:asNum(b.quantity,1),available:asNum(b.available,0),is_deleted:!!b.isDeleted||!!b.is_deleted}));
+  if(!rows.length)return;const {error}=await client.from('books').upsert(rows,{onConflict:'id'});if(error)throw new Error('Books sync: '+error.message);
+ }
+ async function pushStudents(){
+  const all=[...(Array.isArray(window.students)?window.students:[]),...(Array.isArray(window.droppedStudents)?window.droppedStudents:[]),...(Array.isArray(window.alumniStudents)?window.alumniStudents:[])];
+  const unique=new Map();all.forEach(st=>{const id=getId(st);unique.set(id,st);});
+  const rows=[...unique.entries()].map(([id,st])=>({id,auth_user_id:validUuid(st.auth_user_id)?st.auth_user_id:null,library_id:str(st.libraryId||st.library_id||st.formerLibraryId),full_name:str(st.name||st.full_name),class_name:str(st.form||st.className||st.class_name),profile_photo:str(st.photo||st.profilePhoto||st.profile_photo)||null,status:st.status||((window.alumniStudents||[]).includes(st)?'alumni':((window.droppedStudents||[]).includes(st)?'dropped':'active')),start_year:asNum(st.startYear||st.yearStarted||st.start_year,0)||null,end_year:asNum(st.goneYear||st.endYear||st.end_year,0)||null,default_password_change_required:st.mustChangeCredentials!==false}));
+  if(!rows.length)return;const {error}=await client.from('students').upsert(rows,{onConflict:'id'});if(error)throw new Error('Students sync: '+error.message);
+ }
+ async function pushRequests(){
+  const ss=Array.isArray(window.students)?window.students:[];const bs=Array.isArray(window.books)?window.books:[];
+  const rows=(Array.isArray(window.requests)?window.requests:[]).map(r=>{const st=ss.find(x=>String(x.id)===String(r.studentId||r.student_id)||String(x.libraryId)===String(r.libraryId));const b=bs.find(x=>String(x.id)===String(r.bookId||r.book_id));if(!st||!b)return null;return{id:getId(r),student_id:getId(st),book_id:getId(b),requested_borrow_date:r.requestedBorrowDate||r.requested_borrow_date||new Date().toISOString().slice(0,10),status:String(r.status||'pending').toLowerCase(),request_note:str(r.note||r.requestNote||r.request_note)||null,reviewed_by:validUuid(r.reviewed_by)?r.reviewed_by:null,reviewed_at:r.reviewed_at||null};}).filter(Boolean);
+  if(!rows.length)return;const {error}=await client.from('borrow_requests').upsert(rows,{onConflict:'id'});if(error)throw new Error('Borrow requests sync: '+error.message);
+ }
+ async function pushBorrowings(){
+  const bs=Array.isArray(window.books)?window.books:[];const ss=[...(window.students||[]),...(window.droppedStudents||[]),...(window.alumniStudents||[])];
+  const rows=(Array.isArray(window.borrowed)?window.borrowed:[]).map(b=>{const st=ss.find(x=>String(x.id)===String(b.studentId||b.student_id)||String(x.libraryId)===String(b.libraryId));const bk=bs.find(x=>String(x.id)===String(b.bookId||b.book_id));if(!st||!bk)return null;return{id:getId(b),request_id:validUuid(b.request_id)?b.request_id:null,student_id:getId(st),book_id:getId(bk),issue_date:b.issueDate||b.borrowDate||b.issue_date||new Date().toISOString().slice(0,10),due_date:b.dueDate||b.due_date||null,returned_at:b.returnedAt||b.returned_at||null,status:b.returnedAt||b.returned_at?'returned':'borrowed'};}).filter(Boolean);
+  if(!rows.length)return;const {error}=await client.from('borrowings').upsert(rows,{onConflict:'id'});if(error)throw new Error('Borrowings sync: '+error.message);
+ }
+ async function pushMessages(){
+  const rows=(Array.isArray(window.messages)?window.messages:[]).filter(m=>validUuid(m.recipient_user_id||m.recipientUserId)).map(m=>({id:getId(m),recipient_user_id:m.recipient_user_id||m.recipientUserId,student_id:validUuid(m.student_id)?m.student_id:null,title:str(m.title),body:str(m.body||m.message),is_read:!!m.is_read||!!m.isRead}));
+  if(!rows.length)return;const {error}=await client.from('messages').upsert(rows,{onConflict:'id'});if(error)throw new Error('Messages sync: '+error.message);
+ }
+ let syncing=false;
+ window.mzugossSyncToCloud=async function(){
+  if(syncing) return {skipped:true};syncing=true;
+  try{await requireSession();
+   // RLS still controls each table; any denied write is reported rather than silently treated as success.
+   await pushBooks();await pushStudents();await pushRequests();await pushBorrowings();await pushMessages();
+   const result={ok:true,at:new Date().toISOString()};localStorage.setItem(SYNC_KEY,JSON.stringify(result));notify('Cloud sync completed for records allowed by your Supabase policies.');return result;
+  }catch(e){const result={ok:false,at:new Date().toISOString(),error:e.message||String(e)};localStorage.setItem(SYNC_KEY,JSON.stringify(result));console.error('MZUGOSS cloud sync failed:',e);notify('Cloud sync not completed: '+result.error);return result;}
+  finally{syncing=false;}
+ };
+ // Preserve local saving, then attempt cloud sync if a Supabase Auth session exists.
+ if(typeof window.saveData==='function'){
+  const originalSaveData=window.saveData;
+  window.saveData=function(){const result=originalSaveData.apply(this,arguments);client.auth.getSession().then(({data})=>{if(data&&data.session)window.mzugossSyncToCloud();}).catch(e=>console.warn('Cloud sync session check failed:',e));return result;};
+ }
+ // Add a small, nonintrusive cloud status/action to the existing login screen; no passwords or secret keys are stored here.
+ function addCloudTools(){if(document.getElementById('mzugossCloudTools'))return;const target=document.getElementById('loginScreen');if(!target)return;const box=document.createElement('details');box.id='mzugossCloudTools';box.style.cssText='max-width:520px;margin:12px auto;padding:10px 14px;background:#fff;color:#173d2c;border:1px solid #cfe2d8;border-radius:12px;position:relative;z-index:5';box.innerHTML='<summary style="cursor:pointer;font-weight:700">Cloud account and sync</summary><p style="font-size:13px">Use a Supabase Auth account already created for this school. The normal legacy login does not sign in to Supabase.</p><label style="display:block;margin:7px 0 3px">Cloud email</label><input id="mzugossCloudEmail" type="email" autocomplete="username" style="width:100%;padding:9px;border:1px solid #ccd8d1;border-radius:7px"><label style="display:block;margin:7px 0 3px">Cloud password</label><input id="mzugossCloudPassword" type="password" autocomplete="current-password" style="width:100%;padding:9px;border:1px solid #ccd8d1;border-radius:7px"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button id="mzugossCloudLogin" type="button" style="padding:9px 12px;border:0;border-radius:7px;background:#176b45;color:#fff">Sign in to cloud</button><button id="mzugossCloudSync" type="button" style="padding:9px 12px;border:1px solid #176b45;border-radius:7px;background:#fff;color:#176b45">Sync permitted records</button><button id="mzugossCloudLogout" type="button" style="padding:9px 12px;border:1px solid #a33;border-radius:7px;background:#fff;color:#933">Cloud sign out</button></div><p id="mzugossCloudStatus" aria-live="polite" style="font-size:13px"></p>';
+  target.appendChild(box);const status=document.getElementById('mzugossCloudStatus');const say=t=>status.textContent=t;
+  document.getElementById('mzugossCloudLogin').onclick=async()=>{try{await window.mzugossCloudSignIn(document.getElementById('mzugossCloudEmail').value,document.getElementById('mzugossCloudPassword').value);say('Signed in. Press “Sync permitted records” to send local data allowed by your policies.');}catch(e){say('Cloud sign-in failed: '+(e.message||e));}};
+  document.getElementById('mzugossCloudSync').onclick=async()=>{const r=await window.mzugossSyncToCloud();say(r.ok?'Sync completed. Check Supabase tables for records.':'Sync failed: '+r.error);};
+  document.getElementById('mzugossCloudLogout').onclick=async()=>{try{await window.mzugossCloudSignOut();say('Cloud account signed out.');}catch(e){say(e.message||String(e));}};
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addCloudTools);else addCloudTools();
+ client.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_IN'&&session)console.info('MZUGOSS Supabase Auth session established.');});
+})();
+</script>
+
+</body>
 </html>
+
+
+<!-- Hide the technical Supabase sign-in and manual sync controls from the normal school app UI. -->
+<style id="mzugoss-hide-cloud-controls">
+#mzugossCloudTools { display: none !important; visibility: hidden !important; }
+</style>
